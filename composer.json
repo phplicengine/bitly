@@ -13,7 +13,7 @@
     "require": {
         "php": ">=7.0",
         "ext-curl": "*",
-        "doctrine/cache"
+        "doctrine/cache": "^1.8"
     },
     "autoload": {
         "psr-4": {
