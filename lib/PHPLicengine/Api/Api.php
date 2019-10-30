@@ -108,6 +108,7 @@ class Api {
                       call_user_func($this->_curl_callback, $ch, $params, $headers, $method); 
                   } 
                   switch (strtoupper($method)) { 
+                          case 'PUT':              
                           case 'PATCH':
                           case 'DELETE':
                                       curl_setopt($ch, CURLOPT_CUSTOMREQUEST, strtoupper($method));
