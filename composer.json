@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Bitly v4 API",
     "keywords": ["api","restapi", "bitly", "bit.ly"],
-    "license": "Apache",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "Bitly v4 API",
