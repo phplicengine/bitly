@@ -77,9 +77,11 @@ print_r($resr);
 #### Service Classes
 
 In [Bitly v4 API](https://dev.bitly.com/v4/) documentations, resources are classified under serveral categories:
+
 Bitlink, Group, Organization, User, Custom, Campaign, Bsd, App, Deeplink, Billing, Auth
-We made each of them as a separate service class. Method names are the same part of the last part of doc url.
-For example if you want to use [Get Metrics for a Bitlink by countries](https://dev.bitly.com/v4/#operation/getMetricsForBitlinkByCountries), this one is classified under Bitlink category in documentation and the last part of its url is `getMetricsForBitlinkByCountries`, so you should call it this way:
+
+We made each of them as a separate service class. Method names are the same as the last part of documentation url.
+For example if you want to use [Get Metrics for a Bitlink by countries](https://dev.bitly.com/v4/#operation/getMetricsForBitlinkByCountries), this one is classified under Bitlink category in documentation and the last part of its url is `getMetricsForBitlinkByCountries`, so you can call it this way:
 
 ```php
 use PHPLicengine\Service\Bitlink;
@@ -90,7 +92,8 @@ $result = $bitlink->getMetricsForBitlinkByCountries('bit.ly/34nRNvl', ['unit' =>
 All Path parameters, must be passed as string in first argument of methods and all query parameters must be passed as array in second argument of methods
 
 Another example:
-(Retrieve Group Shorten Counts)[https://dev.bitly.com/v4/#operation/getGroupShortenCounts] is classified under Group category, and the last part of its link is `getGroupShortenCounts` so you can call it this way:
+
+[Retrieve Group Shorten Counts](https://dev.bitly.com/v4/#operation/getGroupShortenCounts) is classified under Group category, and the last part of its link is `getGroupShortenCounts` so you can call it this way:
 
 ```php
 use PHPLicengine\Service\Group;
