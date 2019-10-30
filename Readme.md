@@ -7,7 +7,6 @@
 * [Installation](#installation)
 * [Usage](#usage)
 * [Manual](#manual)
-** [Service Classes]()
 * [License](#license)
 
 ## Installation
