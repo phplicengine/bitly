@@ -4,6 +4,7 @@
 * [Installation](#installation)
 * [Usage](#usage)
 * [Manual](#manual)
+* [Caching](#caching)
 * [License](#license)
 
 ## Installation
@@ -124,6 +125,16 @@ $bitlink->setCurlCallback(function($ch, $params, $headers, $method) {
 }); 
 ```
 This is added for your convenience, but you should not need it.
+
+## Caching
+Since Bitlinks never change or expire, this is recommended to cache data locally wherever possible. This library comes with Doctrine Cache. You can use cache like this:
+```php
+use PHPLicengine\Cache;
+$cache = new Cache(['type' => 'file', 'path' => 'path/to/cache/folder']);
+$cache->set('key', 'value');
+echo $cache->get('key') // prints "value"
+```
+We suggest to look at [Doctrine Cache](https://www.doctrine-project.org/projects/doctrine-cache/en/1.8/index.html) and investigate and customize [Cache class]() to use preferred cache type.
 
 ## License
 PHPLicengine Api is distributed under the Apache License. See [License](LICENSE).
