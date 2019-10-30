@@ -1,12 +1,12 @@
 {
     "name": "phplicengine/bitly",
     "type": "library",
-    "description": "Bitly v4 API",
+    "description": "Bitly API v4",
     "keywords": ["api","restapi", "bitly", "bit.ly"],
     "license": "Apache-2.0",
     "authors": [
         {
-            "name": "Bitly v4 API",
+            "name": "PHPLicengine",
             "role": "Developer"
         }
     ],
