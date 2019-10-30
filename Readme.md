@@ -109,7 +109,7 @@ Here is [list of available service classes and methods](Services.md).
 
 #### Custom cURL Options
 
-By defaulr cURL timeout is 30. You can change it with:
+By default cURL timeout is 30. You can change it with:
 ```php
 $bitlink->setTimeout(30);
 ```
