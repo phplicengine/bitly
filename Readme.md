@@ -1,6 +1,3 @@
-[![Latest Stable Version](https://poser.pugx.org/phplicengine/phplicengine-api/v/stable)](https://packagist.org/packages/phplicengine/phplicengine-api)
-[![Total Downloads](https://poser.pugx.org/phplicengine/phplicengine-api/downloads)](https://packagist.org/packages/phplicengine/phplicengine-api)
-
 # Bitly v4 API
 
 ## Contents
