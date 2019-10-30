@@ -93,11 +93,11 @@ $bitlink->setApiKey("API KEY GOES HERE");
 $result = $bitlink->getMetricsForBitlinkByCountries('bit.ly/34nRNvl', ['unit' => 'day', 'units' => -1]);
 ```
 
-All Path parameters, must be passed as string in first argument of methods and all query parameters must be passed as array in second argument of methods
+All Path parameters, must be passed as string in first argument of methods if necessary and all Query parameters must be passed as array in second argument of methods if necessary. If Path parameter is not needed, Query parameters will be first argument of methods.
 
 Another example:
 
-[Retrieve Group Shorten Counts](https://dev.bitly.com/v4/#operation/getGroupShortenCounts) is classified under Group category, and the last part of its link is `getGroupShortenCounts` so you can call it this way:
+[Retrieve Group Shorten Counts](https://dev.bitly.com/v4/#operation/getGroupShortenCounts) is classified under Group category, and the last part of its link is `getGroupShortenCounts`, so you can call it this way:
 
 ```php
 use PHPLicengine\Service\Group;
