@@ -10,8 +10,6 @@ If a method doesn't have a Path parameter, Query Parameter will be first argumen
 * [User](#user)
 * [App](#app)
 * [Bsd](#bsd)
-* [Deeplink](#deeplink)
-* [Billing](#billing)
 * [Custom](#custom)
 * [Campaign](#campaign)
 * [Auth](#auth)
@@ -67,7 +65,6 @@ use PHPLicengine\Service\User;
 $bitlink = new User('API KEY GOES HERE');
 $result = $bitlink->updateUser(['default_group_guid' => 'Ojar7LjM8Bd', 'name' => 'new name']);
 $result = $bitlink->getUser();
-$result = $bitlink->addEmailToUser($user, ['email' => $email]);
 ```
 
 ### App:
@@ -82,20 +79,6 @@ $result = $bitlink->getOAuthApp($client_id);
 use PHPLicengine\Service\Bsd;
 $bitlink = new Bsd('API KEY GOES HERE');
 $result = $bitlink->getBSDs();
-```
-
-### Deeplink:
-```php
-use PHPLicengine\Service\Deeplink;
-$bitlink = new Deeplink('API KEY GOES HERE');
-$result = $bitlink->thirdPartyAppLookup(['third_party_app_id' => 'some value', 'os' => 'android']);
-```
-
-### Billing:
-```php
-use PHPLicengine\Service\Billing;
-$bitlink = new Billing('API KEY GOES HERE');
-$result = $bitlink->getPaymentInvoices('Ojar7LjM8Bd');
 ```
 
 ### Custom:
