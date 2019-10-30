@@ -108,6 +108,12 @@ $result = $bitlink->getGroupShortenCounts($group_guid);
 Here is [list of available service classes and methods](Services.md).
 
 #### Custom cURL Options
+
+By defaulr cURL timeout is 30. You can change it with:
+```php
+$bitlink->setTimeout(30);
+```
+
 If you need to add some CURLOPT_* constants that are not enabled by default, you can call setCurlCallback() method to add them.
 
 ```php
