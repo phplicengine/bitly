@@ -120,5 +120,5 @@ $bitlink->setCurlCallback(function($ch, $params, $headers, $method) {
 This is added for your convenience, but you should not need it.
 
 ## License
-PHPLicengine Api is distributed under the Apache License. See [License](https://github.com/phplicengine/phplicengine-api/blob/master/LICENSE).
+PHPLicengine Api is distributed under the Apache License. See [License](LICENSE).
 
