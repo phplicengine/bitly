@@ -9,7 +9,7 @@
 
 ## Installation
 ```
-composer require phplicengine/Bitly
+composer require phplicengine/bitly
 ```
 
 ## Usage
