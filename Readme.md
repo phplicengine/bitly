@@ -105,7 +105,7 @@ $bitlink = new Group("API KEY GOES HERE");
 $result = $bitlink->getGroupShortenCounts($group_guid);
 ```
 
-Here is [list of available service classes](Services.md).
+Here is [list of available service classes and methods](Services.md).
 
 #### Custom cURL Options
 If you need to add some CURLOPT_* constants that are not enabled by default, you can call setCurlCallback() method to add them.
