@@ -1,5 +1,5 @@
 {
-    "name": "phplicengine/Bitly",
+    "name": "phplicengine/bitly",
     "type": "library",
     "description": "Bitly v4 API",
     "keywords": ["api","restapi", "bitly", "bit.ly"],
