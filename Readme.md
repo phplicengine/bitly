@@ -89,6 +89,15 @@ $bitlink = new Bitlink("API KEY GOES HERE");
 $result = $bitlink->getMetricsForBitlinkByCountries('bit.ly/34nRNvl', ['unit' => 'day', 'units' => -1]);
 ```
 
+Or you can set api key later:
+
+```php
+use PHPLicengine\Service\Bitlink;
+$bitlink = new Bitlink();
+$bitlink->setApiKey("API KEY GOES HERE");
+$result = $bitlink->getMetricsForBitlinkByCountries('bit.ly/34nRNvl', ['unit' => 'day', 'units' => -1]);
+```
+
 All Path parameters, must be passed as string in first argument of methods and all query parameters must be passed as array in second argument of methods
 
 Another example:
@@ -101,7 +110,7 @@ $bitlink = new Group("API KEY GOES HERE");
 $result = $bitlink->getGroupShortenCounts($group_guid);
 ```
 
-For list of available service classes and their methods, see here
+Here is [list of available service classes](Services.md).
 
 #### Custom cURL Options
 If you need to add some CURLOPT_* constants that are not enabled by default, you can call setCurlCallback() method to add them.
