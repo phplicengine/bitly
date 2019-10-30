@@ -4,11 +4,10 @@
 # Bitly v4 API
 
 ## Contents
-* [Usage](#usage)
 * [Installation](#installation)
-* [Sample](#sample)
+* [Usage](#usage)
 * [Manual](#manual)
-* [Changelog](#changelog)
+** [Service Classes]()
 * [License](#license)
 
 ## Installation
@@ -16,7 +15,7 @@
 composer require phplicengine/bitly
 ```
 
-## Sample
+## Usage
 ```php
 
 use PHPLicengine\Service\Bitlink;
