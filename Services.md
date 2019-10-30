@@ -1,6 +1,6 @@
 
 ## Available service classes
-Consult [Bitly v4 API](https://dev.bitly.com/v4/) for required and available parameters to pass to each methods. Path parameters must be 
+Consult [Bitly API v4](https://dev.bitly.com/v4/) for required and available parameters to pass to each methods. Path parameters must be 
 first argument of methods as string if necessary and Query parameters must be passed as an array to the second argument of methods if ncessary. 
 If a method doesn't have a Path parameter, Query Parameter will be first argument.
 
