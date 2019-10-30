@@ -54,15 +54,5 @@ class User extends \PHPLicengine\Api\Api {
              return $this->get($this->url);
       }
       
-      /*
-      Add Email To User
-      https://dev.bitly.com/v4/#operation/addEmailToUser
-      */
-      public function addEmailToUser(string $login, array $params) 
-      {
-             return $this->post($this->url . '/'.$login.'/emails', $params);
-      }
-      
-      
 }
 
