@@ -12,7 +12,8 @@
     ],
     "require": {
         "php": ">=7.0",
-        "ext-curl": "*"
+        "ext-curl": "*",
+        "doctrine/cache"
     },
     "autoload": {
         "psr-4": {
