@@ -8,7 +8,7 @@
 
 ## Installation
 ```
-composer require phplicengine/bitly
+composer require phplicengine/Bitly
 ```
 
 ## Usage
