@@ -4,27 +4,17 @@ Consult [Bitly v4 API](https://dev.bitly.com/v4/) for required and available par
 first argument of methods as string if necessary and Query parameters must be passed as an array to the second argument of methods if ncessary. 
 If a method doesn't have a Path parameter, Query Parameter will be first argument.
 
-[Bitlink](#bitlink)
-
-[Group](#group)
-
-[Organization](#organization)
-
-[User](#user)
-
-[App](#app)
-
-[Bsd](#bsd)
-
-[Deeplink](#deeplink)
-
-[Billing](#billing)
-
-[Custom](#custom)
-
-[Campaign](#campaign)
-
-[Auth](#auth)
+* [Bitlink](#bitlink)
+* [Group](#group)
+* [Organization](#organization)
+* [User](#user)
+* [App](#app)
+* [Bsd](#bsd)
+* [Deeplink](#deeplink)
+* [Billing](#billing)
+* [Custom](#custom)
+* [Campaign](#campaign)
+* [Auth](#auth)
 
 ### Bitlink:
 ```php
