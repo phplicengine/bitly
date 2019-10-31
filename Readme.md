@@ -75,7 +75,7 @@ print_r($resr);
 
 #### Service Classes
 
-In [Bitly v4 API](https://dev.bitly.com/v4/) documentations, resources are classified under serveral categories:
+In [Bitly API v4](https://dev.bitly.com/v4/) documentations, resources are classified under serveral categories:
 
 Bitlink, Group, Organization, User, Custom, Campaign, Bsd, App, Auth
 
@@ -133,8 +133,8 @@ This is added for your convenience, but you should not need it.
 Since Bitlinks never change or expire, this is recommended to cache data locally wherever possible. This library comes with Doctrine Cache. You can use cache like this:
 ```php
 use PHPLicengine\Cache;
-$adapter = new Cache(['type' => 'file', 'path' => 'path/to/cache/folder']);
-$cache = $adapter->getCache();
+$factory = new Cache(['type' => 'file', 'path' => 'path/to/cache/folder']);
+$cache = $factory->getCache();
 $cache->set('key', 'value');
 echo $cache->get('key') // prints "value"
 ```
