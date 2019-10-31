@@ -142,7 +142,7 @@ echo $cache->get('key') // prints "value"
 We suggest to look at [Doctrine Cache Doc](https://www.doctrine-project.org/projects/doctrine-cache/en/1.8/index.html) and investigate and customize [Cache class](lib/PHPLicengine/Cache.php) to use preferred cache type.
 
 ## Contributing and Support
-For all issues or feature request or support questions please open a new [issue](issues). All pull requests are welcome.
+For all issues or feature request or support questions please open a new [issue](https://github.com/phplicengine/bitly/issues). All pull requests are welcome.
 
 ## License
 PHPLicengine Api is distributed under the Apache License. See [License](LICENSE).
