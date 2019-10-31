@@ -60,3 +60,4 @@ class Cache {
              } 
              return $cache;
       }
+}
