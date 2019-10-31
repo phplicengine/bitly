@@ -67,7 +67,7 @@ class Group extends \PHPLicengine\Api\Api {
       Retrieve Groups
       https://dev.bitly.com/v4/#operation/getGroups
       */
-      public function getGroups(array $params = "") 
+      public function getGroups(array $params = array()) 
       {
              return $this->get($this->url, $params);
       }
@@ -87,14 +87,14 @@ class Group extends \PHPLicengine\Api\Api {
       */
       public function updateGroupPreferences(string $group_guid, array $params) 
       {
-             return $this->patch($this->url . '/'.$group_guid.'/preferences');
+             return $this->patch($this->url . '/'.$group_guid.'/preferences', $params);
       }
 
       /*
       Retrieve Bitlinks by Group
       https://dev.bitly.com/v4/#operation/getBitlinksByGroup
       */
-      public function getBitlinksByGroup(string $group_guid, array $params = "") 
+      public function getBitlinksByGroup(string $group_guid, array $params = array()) 
       {
              return $this->get($this->url . '/'.$group_guid.'/bitlinks', $params);
       }
