@@ -62,15 +62,5 @@ class Organization extends \PHPLicengine\Api\Api {
       {
              return $this->get($this->url . '/'.$organization_guid);
       }      
-      
-      /*
-      Get Payment Invoices
-      https://dev.bitly.com/v4/#operation/getPaymentInvoices
-      */
-      public function getPaymentInvoices(string $organization_guid) 
-      {
-             return $this->get($this->url . '/'.$organization_guid.'/payment_invoices');
-      }            
-      
 }
 
