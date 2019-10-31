@@ -32,7 +32,7 @@ class Auth extends \PHPLicengine\Api\Api {
       public function __construct ($clientid_username, $clientsecret_password)
       {
              parent::__construct(null, true);
-             $this->url = 'https://api-ssl.bitly.com';    
+             $this->url = 'https://api-ssl.bitly.com/oauth/access_token';    
              $key = base64_encode($clientid_username.":".$clientsecret_password);
              $this->setApiKey($key);
      }
@@ -44,7 +44,7 @@ class Auth extends \PHPLicengine\Api\Api {
       public function exchangeToken(array $params)
       {
              $params['grant_type'] = 'password';
-             $result = $this->post($this->url . '/oauth/access_token', $params);
+             $result = $this->post($this->url, $params);
              return json_decode($result->getResponse(), true)['access_token'];
       }
 
@@ -54,7 +54,7 @@ class Auth extends \PHPLicengine\Api\Api {
       */
       public function basicAuthFlow(array $params)
       {
-             $result = $this->post($this->url . '/oauth/access_token', $params);
+             $result = $this->post($this->url, $params);
              return json_decode($result->getResponse(), true)['access_token'];
       }
 }
