@@ -65,19 +65,19 @@ class Api {
 
            public function enableSslVerification() 
            { 
- 		          $this->_verify_ssl = true; 
- 		          $this->_verify_host = 2; 
+                  $this->_verify_ssl = true; 
+                  $this->_verify_host = 2; 
            } 
   
            public function disableSslVerification() 
            { 
-         	 	  $this->_verify_ssl = false; 
- 	              $this->_verify_host = 0; 
+                  $this->_verify_ssl = false; 
+                  $this->_verify_host = 0; 
            } 
 
            public function setTimeout($timeout) 
            { 
- 	 	          $this->_timeout = $timeout; 
+                  $this->_timeout = $timeout; 
            } 
 
            public function setCurlProxy($proxy)  
@@ -251,5 +251,4 @@ class Api {
            {
                   return $this->curlError;
            }
-
 }
