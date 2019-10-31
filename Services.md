@@ -56,7 +56,6 @@ $organization = new Organization('API KEY GOES HERE');
 $result = $organization->getOrganizations();
 $result = $organization->getOrganizationShortenCounts('Ojar7LjM8Bd');
 $result = $organization->getOrganization('Ojar7LjM8Bd');
-$result = $organization->getPaymentInvoices('Ojar7LjM8Bd');
 ```
 
 ### User:
