@@ -40,16 +40,16 @@ class Bitlink extends \PHPLicengine\Api\Api {
       Get Metrics for a Bitlink by referrers by domain
       https://dev.bitly.com/v4/#operation/getMetricsForBitlinkByReferrersByDomains
       */
-      public function getMetricsForBitlinkByReferrersByDomains(string $bitlink) 
+      public function getMetricsForBitlinkByReferrersByDomains(string $bitlink, array $params = "") 
       {
-             return $this->get($this->url . '/bitlinks/'.$bitlink.'/referrers_by_domains');
+             return $this->get($this->url . '/bitlinks/'.$bitlink.'/referrers_by_domains', $params);
       }
       
       /*
       Get Metrics for a Bitlink by countries
       https://dev.bitly.com/v4/#operation/getMetricsForBitlinkByCountries
       */             
-      public function getMetricsForBitlinkByCountries(string $bitlink, array $params) 
+      public function getMetricsForBitlinkByCountries(string $bitlink, array $params = "") 
       {
              return $this->get($this->url . '/bitlinks/'.$bitlink.'/countries', $params);
       }
@@ -58,9 +58,9 @@ class Bitlink extends \PHPLicengine\Api\Api {
       Get Clicks for a Bitlink
       https://dev.bitly.com/v4/#operation/getClicksForBitlink
       */
-      public function getClicksForBitlink(string $bitlink) 
+      public function getClicksForBitlink(string $bitlink, array $params = "") 
       {
-             return $this->get($this->url . '/bitlinks/'.$bitlink.'/clicks');
+             return $this->get($this->url . '/bitlinks/'.$bitlink.'/clicks', $params);
       }
 
       /*
@@ -76,9 +76,9 @@ class Bitlink extends \PHPLicengine\Api\Api {
       Get Metrics for a Bitlink by referrers
       https://dev.bitly.com/v4/#operation/getMetricsForBitlinkByReferrers
       */
-      public function getMetricsForBitlinkByReferrers(string $bitlink) 
+      public function getMetricsForBitlinkByReferrers(string $bitlink, array $params = "") 
       {
-             return $this->get($this->url . '/bitlinks/'.$bitlink.'/referrers');
+             return $this->get($this->url . '/bitlinks/'.$bitlink.'/referrers', $params);
       }
       
       /*
@@ -112,9 +112,9 @@ class Bitlink extends \PHPLicengine\Api\Api {
       Get Clicks Summary for a Bitlink
       https://dev.bitly.com/v4/#operation/getClicksSummaryForBitlink
       */
-      public function getClicksSummaryForBitlink(string $bitlink) 
+      public function getClicksSummaryForBitlink(string $bitlink, array $params = "") 
       {
-             return $this->get($this->url . '/bitlinks/'.$bitlink.'/clicks/summary');
+             return $this->get($this->url . '/bitlinks/'.$bitlink.'/clicks/summary', $params);
       }
 
       /*
@@ -130,28 +130,9 @@ class Bitlink extends \PHPLicengine\Api\Api {
       Get Metrics for a Bitlink by referring domains
       https://dev.bitly.com/v4/#operation/getMetricsForBitlinkByReferringDomains
       */
-      public function getMetricsForBitlinkByReferringDomains(string $bitlink) 
+      public function getMetricsForBitlinkByReferringDomains(string $bitlink, array $params = "") 
       {
-             return $this->get($this->url . '/bitlinks/'.$bitlink.'/referring_domains');
-      }
-      
-      /*
-      Retrieve Bitlinks by Group
-      https://dev.bitly.com/v4/#operation/getBitlinksByGroup
-      */
-      public function getBitlinksByGroup(string $group_guid) 
-      {
-             return $this->get($this->url . '/groups/'.$group_guid.'/bitlinks');
-      }
-
-
-      /*
-      Get Click Metrics for a Group by countries
-      https://dev.bitly.com/v4/#operation/getGroupMetricsByCountries
-      */
-      public function getGroupMetricsByCountries(string $group_guid) 
-      {
-             return $this->get($this->url . '/groups/'.$group_guid.'/countries');
+             return $this->get($this->url . '/bitlinks/'.$bitlink.'/referring_domains', $params);
       }
 
 }
