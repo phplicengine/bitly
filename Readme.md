@@ -8,7 +8,7 @@
 * [Usage](#usage)
 * [Manual](#manual)
 * [Caching](#caching)
-* [Contributing and Support](#Contributing and Support)
+* [Contributing and Support](#contributing-and-support)
 * [License](#license)
 
 ## Installation
