@@ -48,8 +48,8 @@ class Cache {
                           $cache = new \Doctrine\Common\Cache\FilesystemCache($this->config['path']);
                      break;
                      case 'sqlite3':
-                          $db = new \SQLite3('bitly.db');
-                          $cache = new \SQLite3Cache($db, 'bitly_table');
+                          $db = new \SQLite3($this->config['sqlite3_db']);
+                          $cache = new \SQLite3Cache($db, $this->config['sqlite3_table']);
                      break;
                      case 'xcache':
                           $cache = new \Doctrine\Common\Cache\XcacheCache();
