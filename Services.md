@@ -128,11 +128,11 @@ set `$client_id` and `$client_secret` as `$config` array like below to pass to A
 ```php
 use PHPLicengine\Api\Api;
 use PHPLicengine\Service\Auth;
-$api = new API(null, true);
 $config['clientid_username'] = "";
 $config['clientsecret_password'] = "";
 $params['username'] = "";
 $params['password'] = "";
+$api = new API(null, true);
 $app = new Auth($api, $config);
 $token = $app->exchangeToken($params);
 print($token);
