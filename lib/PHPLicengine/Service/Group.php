@@ -24,14 +24,16 @@
 namespace PHPLicengine\Service;
 use PHPLicengine\Exception\ResponseException;
 use PHPLicengine\Exception\CurlException;
+use PHPLicengine\Api\ApiInterface;
 
-class Group extends \PHPLicengine\Api\Api {
+class Group {
  
       private $url;
+      private $api;      
       
-      public function __construct ($api_key)
+      public function __construct (ApiInterface $api)
       {
-             parent::__construct($api_key);
+             $this->api = $api;
              $this->url = 'https://api-ssl.bitly.com/v4/groups';       
 
       }
@@ -42,7 +44,7 @@ class Group extends \PHPLicengine\Api\Api {
       */
       public function getGroupTags(string $group_guid) 
       {
-             return $this->get($this->url . '/'.$group_guid.'/tags');
+             return $this->api->get($this->url . '/'.$group_guid.'/tags');
       }
       
       /*
@@ -51,7 +53,7 @@ class Group extends \PHPLicengine\Api\Api {
       */
       public function getGroupMetricsByReferringNetworks(string $group_guid) 
       {
-             return $this->get($this->url . '/'.$group_guid.'/referring_networks');
+             return $this->api->get($this->url . '/'.$group_guid.'/referring_networks');
       }
       
       /*
@@ -60,7 +62,7 @@ class Group extends \PHPLicengine\Api\Api {
       */
       public function getGroupShortenCounts(string $group_guid) 
       {
-             return $this->get($this->url . '/'.$group_guid.'/shorten_counts');
+             return $this->api->get($this->url . '/'.$group_guid.'/shorten_counts');
       }
 
       /*
@@ -69,7 +71,7 @@ class Group extends \PHPLicengine\Api\Api {
       */
       public function getGroups(array $params = array()) 
       {
-             return $this->get($this->url, $params);
+             return $this->api->get($this->url, $params);
       }
       
       /*
@@ -78,7 +80,7 @@ class Group extends \PHPLicengine\Api\Api {
       */
       public function getGroupPreferences(string $group_guid) 
       {
-             return $this->get($this->url . '/'.$group_guid.'/preferences');
+             return $this->api->get($this->url . '/'.$group_guid.'/preferences');
       }
       
       /*
@@ -87,7 +89,7 @@ class Group extends \PHPLicengine\Api\Api {
       */
       public function updateGroupPreferences(string $group_guid, array $params) 
       {
-             return $this->patch($this->url . '/'.$group_guid.'/preferences', $params);
+             return $this->api->patch($this->url . '/'.$group_guid.'/preferences', $params);
       }
 
       /*
@@ -96,7 +98,7 @@ class Group extends \PHPLicengine\Api\Api {
       */
       public function getBitlinksByGroup(string $group_guid, array $params = array()) 
       {
-             return $this->get($this->url . '/'.$group_guid.'/bitlinks', $params);
+             return $this->api->get($this->url . '/'.$group_guid.'/bitlinks', $params);
       }
 
       /*
@@ -105,7 +107,7 @@ class Group extends \PHPLicengine\Api\Api {
       */
       public function getGroupMetricsByCountries(string $group_guid) 
       {
-             return $this->get($this->url . '/'.$group_guid.'/countries');
+             return $this->api->get($this->url . '/'.$group_guid.'/countries');
       }
       
       /*
@@ -114,7 +116,7 @@ class Group extends \PHPLicengine\Api\Api {
       */
       public function getSortedBitlinks(string $group_guid, array $params = array(), string $sort = 'clicks') 
       {
-             return $this->get($this->url . '/'.$group_guid.'/bitlinks/'.$sort, $params);
+             return $this->api->get($this->url . '/'.$group_guid.'/bitlinks/'.$sort, $params);
       }
 
       /*
@@ -123,7 +125,7 @@ class Group extends \PHPLicengine\Api\Api {
       */
       public function updateGroup(string $group_guid, array $params) 
       {
-             return $this->patch($this->url . '/'.$group_guid, $params);
+             return $this->api->patch($this->url . '/'.$group_guid, $params);
       }      
       
       /*
@@ -132,7 +134,7 @@ class Group extends \PHPLicengine\Api\Api {
       */
       public function getGroup(string $group_guid) 
       {
-             return $this->get($this->url . '/'.$group_guid);
+             return $this->api->get($this->url . '/'.$group_guid);
       }      
       
       /*
@@ -141,7 +143,7 @@ class Group extends \PHPLicengine\Api\Api {
       */
       public function deleteGroup(string $group_guid) 
       {
-             return $this->delete($this->url . '/'.$group_guid);
+             return $this->api->delete($this->url . '/'.$group_guid);
       }      
       
 }
