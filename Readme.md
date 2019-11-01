@@ -18,9 +18,10 @@ composer require phplicengine/bitly
 
 ## Usage
 ```php
-
+use PHPLicengine\Api\Api;
 use PHPLicengine\Service\Bitlink;
-$bitlink = new Bitlink("API KEY GOES HERE");
+$api = new API("API KEY GOES HERE");
+$bitlink = new Bitlink($api);
 $result = $bitlink->createBitlink(['long_url' => 'http://www.example.com']);
 
 if ($bitlink->isCurlError()) {
