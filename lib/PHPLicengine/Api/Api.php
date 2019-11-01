@@ -24,7 +24,7 @@
 namespace PHPLicengine\Api;
 use PHPLicengine\Exception\CurlException;
 
-class Api {
+class Api implements ApiInterface {
 
            protected $_api_key_var = 'Authorization: Bearer ';
            protected $_api_key;
