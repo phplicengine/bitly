@@ -108,4 +108,5 @@ class Campaign {
       {
              return $this->api->patch($this->url . '/channels/'.$channel_guid, $params);
       }      
+ 
 }
