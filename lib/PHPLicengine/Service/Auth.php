@@ -24,18 +24,21 @@
 namespace PHPLicengine\Service;
 use PHPLicengine\Exception\ResponseException;
 use PHPLicengine\Exception\CurlException;
+use PHPLicengine\Api\ApiInterface;
 
-class Auth extends \PHPLicengine\Api\Api {
+class Auth {
  
       private $url;
-      
-      public function __construct ($clientid_username, $clientsecret_password)
+      private $api;      
+
+      public function __construct (ApiInterface $api, array $config)
       {
-             parent::__construct(null, true);
+             $this->api = $api;
              $this->url = 'https://api-ssl.bitly.com/oauth/access_token';    
-             $key = base64_encode($clientid_username.":".$clientsecret_password);
-             $this->setApiKey($key);
-     }
+             $key = base64_encode($config['clientid_username'].":".$config['clientsecret_password']);
+             $api->setApiKey($key);
+      }
+ 
  
       /*
       Exchanging a Username and Password for an Access Token
@@ -44,7 +47,7 @@ class Auth extends \PHPLicengine\Api\Api {
       public function exchangeToken(array $params)
       {
              $params['grant_type'] = 'password';
-             $result = $this->post($this->url, $params);
+             $result = $this->api->post($this->url, $params);
              return json_decode($result->getResponse(), true)['access_token'];
       }
 
@@ -54,7 +57,7 @@ class Auth extends \PHPLicengine\Api\Api {
       */
       public function basicAuthFlow(array $params)
       {
-             $result = $this->post($this->url, $params);
-             return json_decode($result->getResponse(), true)['access_token'];
+             $result = $this->api->post($this->url, $params);
+             return $result->getResponse();
       }
 }
