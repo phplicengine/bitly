@@ -20,19 +20,18 @@ composer require phplicengine/bitly
 ```php
 use PHPLicengine\Api\Api;
 use PHPLicengine\Service\Bitlink;
+
 $api = new API("API KEY GOES HERE");
 $bitlink = new Bitlink($api);
 $result = $bitlink->createBitlink(['long_url' => 'http://www.example.com']);
 
-if ($bitlink->isCurlError()) {
+if ($api->isCurlError()) {
     
-    // If curl retruns error.
-    print ($bitlink->getCurlErrno().': '.$bitlink->getCurlError());  
+    print ($api->getCurlErrno().': '.$api->getCurlError());
     
 } else {
 
-    // If Bitly returns error message
-    if ($result->isError()) { 
+    if ($result->isError()) {
 
         print("Error:<br />");
         print($result->getResponse());
@@ -40,8 +39,7 @@ if ($bitlink->isCurlError()) {
     
     } else {
     
-       // If this is 200 or 201 by Bitly
-       if ($result->isSuccess()) {  
+       if ($result->isSuccess()) {
         
           print("SUCCESS:<br />");
           print($result->getResponse());
@@ -57,20 +55,19 @@ if ($bitlink->isCurlError()) {
     }
 }
 
-// Below is for debug purposes only.
 print("INFO:<br />");
 
-$res = $result->getResponse(); //It returns the response as it is. In this case in json format
-print($res."<br />");
+$resj = $result->getResponse();
+print($resj."<br />");
 
-$reso = $result->getResponseObject(); //It decodes json response. stdClass object.
+$reso = $result->getResponseObject();
 print_r($reso);
 
-$resh = $result->getHeaders(); //It returns header of server.
+$resh = $result->getHeaders();
 print_r($resh);
 
-$resr = $bitlink->getRequest(); //It returns the request.
-print_r($resr);
+$resh = $api->getRequest();
+print_r($resh);
 ```
 
 ## Manual
@@ -85,17 +82,11 @@ We made each of them as a separate service class. Method names are the same as t
 For example if you want to use [Get Metrics for a Bitlink by countries](https://dev.bitly.com/v4/#operation/getMetricsForBitlinkByCountries), this one is classified under Bitlink category in documentation and the last part of its url is `getMetricsForBitlinkByCountries`, so you can call it this way:
 
 ```php
+use PHPLicengine\Api\Api;
 use PHPLicengine\Service\Bitlink;
-$bitlink = new Bitlink("API KEY GOES HERE");
-$result = $bitlink->getMetricsForBitlinkByCountries('bit.ly/34nRNvl', ['unit' => 'day', 'units' => -1]);
-```
 
-Or you can set api key later:
-
-```php
-use PHPLicengine\Service\Bitlink;
-$bitlink = new Bitlink();
-$bitlink->setApiKey("API KEY GOES HERE");
+$api = new API("API KEY GOES HERE");
+$bitlink = new Bitlink($api);
 $result = $bitlink->getMetricsForBitlinkByCountries('bit.ly/34nRNvl', ['unit' => 'day', 'units' => -1]);
 ```
 
@@ -106,8 +97,11 @@ Another example:
 [Retrieve Group Shorten Counts](https://dev.bitly.com/v4/#operation/getGroupShortenCounts) is classified under Group category, and the last part of its link is `getGroupShortenCounts`, so you can call it this way:
 
 ```php
+use PHPLicengine\Api\Api;
 use PHPLicengine\Service\Group;
-$bitlink = new Group("API KEY GOES HERE");
+
+$api = new API("API KEY GOES HERE");
+$bitlink = new Group($api);
 $result = $bitlink->getGroupShortenCounts($group_guid);
 ```
 
@@ -117,17 +111,20 @@ Here is [list of available service classes and methods](Services.md).
 
 By default cURL timeout is 30. You can change it with:
 ```php
-$bitlink->setTimeout(30);
+$api->setTimeout(30);
 ```
 
 If you need to add some CURLOPT_* constants that are not enabled by default, you can call setCurlCallback() method to add them.
 
 ```php
+use PHPLicengine\Api\Api;
 use PHPLicengine\Service\Bitlink;
-$bitlink = new Bitlink("API KEY GOES HERE");
-$bitlink->setCurlCallback(function($ch, $params, $headers, $method) { 
+
+$api = new API("API KEY GOES HERE");
+$api->setCurlCallback(function($ch, $params, $headers, $method) { 
       curl_setopt($ch, CURLOPT_*, 'some value'); 
 }); 
+$bitlink = new Bitlink($api);
 ```
 This is added for your convenience, but you should not need it.
 
@@ -147,4 +144,3 @@ For all issues or feature request or support questions please open a new [issue]
 
 ## License
 PHPLicengine Api is distributed under the Apache License. See [License](LICENSE).
-
