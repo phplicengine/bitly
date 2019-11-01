@@ -133,7 +133,7 @@ This is added for your convenience, but you should not need it.
 ## Caching
 Since Bitlinks never change or expire, this is recommended to cache data locally wherever possible. This library comes with Doctrine Cache. You can use cache like this:
 ```php
-use PHPLicengine\Cache;
+use PHPLicengine\Cache\Cache;
 $factory = new Cache(['type' => 'file', 'path' => 'path/to/cache/folder']);
 $cache = $factory->getCache();
 $cache->set('key', 'value');
