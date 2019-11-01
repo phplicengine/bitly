@@ -24,16 +24,17 @@
 namespace PHPLicengine\Service;
 use PHPLicengine\Exception\ResponseException;
 use PHPLicengine\Exception\CurlException;
+use PHPLicengine\Api\ApiInterface;
 
-class Campaign extends \PHPLicengine\Api\Api {
+class Campaign {
  
       private $url;
+      private $api;      
       
-      public function __construct ($api_key)
+      public function __construct (ApiInterface $api)
       {
-             parent::__construct($api_key);
+             $this->api = $api;
              $this->url = 'https://api-ssl.bitly.com/v4';       
-
       }
  
       /*
@@ -42,7 +43,7 @@ class Campaign extends \PHPLicengine\Api\Api {
       */
       public function createChannel(array $params)
       {
-             return $this->post($this->url . '/channels', $params);
+             return $this->api->post($this->url . '/channels', $params);
       }
 
       /*
@@ -51,7 +52,7 @@ class Campaign extends \PHPLicengine\Api\Api {
       */
       public function getChannels(array $params)
       {
-             return $this->get($this->url . '/channels', $params);
+             return $this->api->get($this->url . '/channels', $params);
       }
       
       /*
@@ -60,7 +61,7 @@ class Campaign extends \PHPLicengine\Api\Api {
       */
       public function createCampaign(array $params)
       {
-             return $this->post($this->url . '/campaigns', $params);
+             return $this->api->post($this->url . '/campaigns', $params);
       }
       
       /*
@@ -69,7 +70,7 @@ class Campaign extends \PHPLicengine\Api\Api {
       */
       public function getCampaigns(array $params)
       {
-             return $this->get($this->url . '/campaigns', $params);
+             return $this->api->get($this->url . '/campaigns', $params);
       }
       
       /*
@@ -78,7 +79,7 @@ class Campaign extends \PHPLicengine\Api\Api {
       */
       public function getCampaign(string $campaign_guid)
       {
-             return $this->get($this->url . '/campaigns/'.$campaign_guid);
+             return $this->api->get($this->url . '/campaigns/'.$campaign_guid);
       }
       
       /*
@@ -87,7 +88,7 @@ class Campaign extends \PHPLicengine\Api\Api {
       */
       public function updateCampaign(string $campaign_guid, array $params)
       {
-             return $this->patch($this->url . '/campaigns/'.$campaign_guid, $params);
+             return $this->api->patch($this->url . '/campaigns/'.$campaign_guid, $params);
       }
       
       /*
@@ -96,7 +97,7 @@ class Campaign extends \PHPLicengine\Api\Api {
       */
       public function getChannel(string $channel_guid)
       {
-             return $this->get($this->url . '/channels/'.$channel_guid);
+             return $this->api->get($this->url . '/channels/'.$channel_guid);
       }
       
       /*
@@ -105,6 +106,6 @@ class Campaign extends \PHPLicengine\Api\Api {
       */
       public function updateChannel(string $channel_guid, array $params)
       {
-             return $this->patch($this->url . '/channels/'.$channel_guid, $params);
+             return $this->api->patch($this->url . '/channels/'.$channel_guid, $params);
       }      
 }
