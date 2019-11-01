@@ -251,4 +251,5 @@ class Api implements ApiInterface {
            {
                   return $this->curlError;
            }
+           
 }
