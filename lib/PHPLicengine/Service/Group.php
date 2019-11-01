@@ -35,7 +35,6 @@ class Group {
       {
              $this->api = $api;
              $this->url = 'https://api-ssl.bitly.com/v4/groups';       
-
       }
  
       /*
