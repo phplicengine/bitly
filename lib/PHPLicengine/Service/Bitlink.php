@@ -25,15 +25,17 @@ namespace PHPLicengine\Service;
 use PHPLicengine\Exception\ResponseException;
 use PHPLicengine\Exception\CurlException;
 
-class Bitlink extends \PHPLicengine\Api\Api {
+use PHPLicengine\Api\ApiInterface;
+
+class Bitlink {
  
       private $url;
+      private $api;      
       
-      public function __construct ($api_key)
+      public function __construct (ApiInterface $api)
       {
-             parent::__construct($api_key);
+             $this->api = $api;
              $this->url = 'https://api-ssl.bitly.com/v4';       
-
       }
       
       /*
@@ -42,7 +44,7 @@ class Bitlink extends \PHPLicengine\Api\Api {
       */
       public function getMetricsForBitlinkByReferrersByDomains(string $bitlink, array $params = array()) 
       {
-             return $this->get($this->url . '/bitlinks/'.$bitlink.'/referrers_by_domains', $params);
+             return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/referrers_by_domains', $params);
       }
       
       /*
@@ -51,7 +53,7 @@ class Bitlink extends \PHPLicengine\Api\Api {
       */             
       public function getMetricsForBitlinkByCountries(string $bitlink, array $params = array()) 
       {
-             return $this->get($this->url . '/bitlinks/'.$bitlink.'/countries', $params);
+             return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/countries', $params);
       }
 
       /*
@@ -60,7 +62,7 @@ class Bitlink extends \PHPLicengine\Api\Api {
       */
       public function getClicksForBitlink(string $bitlink, array $params = array()) 
       {
-             return $this->get($this->url . '/bitlinks/'.$bitlink.'/clicks', $params);
+             return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/clicks', $params);
       }
 
       /*
@@ -69,7 +71,7 @@ class Bitlink extends \PHPLicengine\Api\Api {
       */
       public function expandBitlink(array $params) 
       {
-             return $this->post($this->url . '/expand', $params);
+             return $this->api->post($this->url . '/expand', $params);
       }
       
       /*
@@ -78,7 +80,7 @@ class Bitlink extends \PHPLicengine\Api\Api {
       */
       public function getMetricsForBitlinkByReferrers(string $bitlink, array $params = array()) 
       {
-             return $this->get($this->url . '/bitlinks/'.$bitlink.'/referrers', $params);
+             return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/referrers', $params);
       }
       
       /*
@@ -87,7 +89,7 @@ class Bitlink extends \PHPLicengine\Api\Api {
       */
       public function createFullBitlink(array $params) 
       {
-             return $this->post($this->url . '/bitlinks', $params);
+             return $this->api->post($this->url . '/bitlinks', $params);
       }
       
       /*
@@ -96,7 +98,7 @@ class Bitlink extends \PHPLicengine\Api\Api {
       */
       public function updateBitlink(string $bitlink, array $params) 
       {
-             return $this->patch($this->url . '/bitlinks/'.$bitlink, $params);
+             return $this->api->patch($this->url . '/bitlinks/'.$bitlink, $params);
       }
 
       /*
@@ -105,7 +107,7 @@ class Bitlink extends \PHPLicengine\Api\Api {
       */
       public function getBitlink(string $bitlink) 
       {
-             return $this->get($this->url . '/bitlinks/'.$bitlink);
+             return $this->api->get($this->url . '/bitlinks/'.$bitlink);
       }
 
       /*
@@ -114,7 +116,7 @@ class Bitlink extends \PHPLicengine\Api\Api {
       */
       public function getClicksSummaryForBitlink(string $bitlink, array $params = array()) 
       {
-             return $this->get($this->url . '/bitlinks/'.$bitlink.'/clicks/summary', $params);
+             return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/clicks/summary', $params);
       }
 
       /*
@@ -123,7 +125,7 @@ class Bitlink extends \PHPLicengine\Api\Api {
       */
       public function createBitlink(array $params) 
       {
-             return $this->post($this->url . '/shorten', $params);
+             return $this->api->post($this->url . '/shorten', $params);
       }
 
       /*
@@ -132,7 +134,7 @@ class Bitlink extends \PHPLicengine\Api\Api {
       */
       public function getMetricsForBitlinkByReferringDomains(string $bitlink, array $params = array()) 
       {
-             return $this->get($this->url . '/bitlinks/'.$bitlink.'/referring_domains', $params);
+             return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/referring_domains', $params);
       }
 
 }
