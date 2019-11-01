@@ -34,5 +34,4 @@ interface ApiInterface
     public function put($url, $params = null, $headers = null);
     
     public function patch($url, $params = null, $headers = null); 
-
 }
