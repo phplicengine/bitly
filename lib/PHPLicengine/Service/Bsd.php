@@ -24,16 +24,17 @@
 namespace PHPLicengine\Service;
 use PHPLicengine\Exception\ResponseException;
 use PHPLicengine\Exception\CurlException;
+use PHPLicengine\Api\ApiInterface;
 
-class Bsd extends \PHPLicengine\Api\Api {
+class Bsd {
  
       private $url;
+      private $api;      
       
-      public function __construct ($api_key)
+      public function __construct (ApiInterface $api)
       {
-             parent::__construct($api_key);
+             $this->api = $api;
              $this->url = 'https://api-ssl.bitly.com/v4/bsds';       
-
       }
  
       /*
@@ -42,8 +43,7 @@ class Bsd extends \PHPLicengine\Api\Api {
       */
       public function getBSDs() 
       {
-             return $this->get($this->url);
+             return $this->api->get($this->url);
       }
       
 }
-
