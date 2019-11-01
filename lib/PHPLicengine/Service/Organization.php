@@ -24,14 +24,16 @@
 namespace PHPLicengine\Service;
 use PHPLicengine\Exception\ResponseException;
 use PHPLicengine\Exception\CurlException;
+use PHPLicengine\Api\ApiInterface;
 
-class Organization extends \PHPLicengine\Api\Api {
+class Organization {
  
       private $url;
+      private $api;      
       
-      public function __construct ($api_key)
+      public function __construct (ApiInterface $api)
       {
-             parent::__construct($api_key);
+             $this->api = $api;
              $this->url = 'https://api-ssl.bitly.com/v4/organizations';       
 
       }
@@ -42,7 +44,7 @@ class Organization extends \PHPLicengine\Api\Api {
       */
       public function getOrganizations() 
       {
-             return $this->get($this->url);
+             return $this->api->get($this->url);
       }
       
       /*
@@ -51,7 +53,7 @@ class Organization extends \PHPLicengine\Api\Api {
       */
       public function getOrganizationShortenCounts(string $organization_guid) 
       {
-             return $this->get($this->url . '/'.$organization_guid.'/shorten_counts');
+             return $this->api->get($this->url . '/'.$organization_guid.'/shorten_counts');
       }
       
       /*
@@ -60,7 +62,6 @@ class Organization extends \PHPLicengine\Api\Api {
       */
       public function getOrganization(string $organization_guid) 
       {
-             return $this->get($this->url . '/'.$organization_guid);
+             return $this->api->get($this->url . '/'.$organization_guid);
       }      
 }
-
