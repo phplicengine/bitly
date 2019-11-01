@@ -21,7 +21,7 @@
 ## limitations under the License.
 #################################################
 
-namespace PHPLicengine/Cache;
+namespace PHPLicengine\Cache;
 use PHPLicengine\Exception\CacheException;
 
 class Cache {
