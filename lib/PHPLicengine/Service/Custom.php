@@ -24,14 +24,16 @@
 namespace PHPLicengine\Service;
 use PHPLicengine\Exception\ResponseException;
 use PHPLicengine\Exception\CurlException;
+use PHPLicengine\Api\ApiInterface;
 
-class Custom extends \PHPLicengine\Api\Api {
+class Custom  {
  
       private $url;
+      private $api;      
       
-      public function __construct ($api_key)
+      public function __construct (ApiInterface $api)
       {
-             parent::__construct($api_key);
+             $this->api = $api;
              $this->url = 'https://api-ssl.bitly.com/v4/custom_bitlinks';       
 
       }
@@ -42,7 +44,7 @@ class Custom extends \PHPLicengine\Api\Api {
       */
       public function updateCustomBitlink(string $custom_bitlink, array $params)
       {
-             return $this->patch($this->url . '/'.$custom_bitlink, $params);
+             return $this->api->patch($this->url . '/'.$custom_bitlink, $params);
       }
 
       /*
@@ -51,7 +53,7 @@ class Custom extends \PHPLicengine\Api\Api {
       */
       public function getCustomBitlink(string $custom_bitlink)
       {
-             return $this->get($this->url . '/'.$custom_bitlink);
+             return $this->api->get($this->url . '/'.$custom_bitlink);
       }
       
       /*
@@ -60,7 +62,7 @@ class Custom extends \PHPLicengine\Api\Api {
       */
       public function addCustomBitlink(array $params)
       {
-             return $this->post($this->url, $params);
+             return $this->api->post($this->url, $params);
       }
       
       /*
@@ -69,7 +71,7 @@ class Custom extends \PHPLicengine\Api\Api {
       */
       public function getCustomBitlinkMetricsByDestination(string $custom_bitlink)
       {
-             return $this->get($this->url . '/'.$custom_bitlink.'/clicks_by_destination');
+             return $this->api->get($this->url . '/'.$custom_bitlink.'/clicks_by_destination');
       }
       
 }
