@@ -3,5 +3,8 @@ install: composer install
 php:
   - '7.2'
   - '7.3'
+  - nightly
+allow_failures:
+  - php: nightly  
 notifications:
   email: false
