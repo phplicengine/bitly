@@ -24,7 +24,6 @@
 namespace PHPLicengine\Service;
 use PHPLicengine\Exception\ResponseException;
 use PHPLicengine\Exception\CurlException;
-
 use PHPLicengine\Api\ApiInterface;
 
 class Bitlink {
