@@ -136,8 +136,8 @@ Since Bitlinks never change or expire, this is recommended to cache data locally
 use PHPLicengine\Cache\Cache;
 $factory = new Cache(['type' => 'file', 'path' => 'path/to/cache/folder']);
 $cache = $factory->getCache();
-$cache->set('key', 'value');
-echo $cache->get('key'); // prints "value"
+$cache->save('key', 'value');
+echo $cache->fetch('key'); // prints "value"
 ```
 We suggest to look at [Doctrine Cache Doc](https://www.doctrine-project.org/projects/doctrine-cache/en/1.8/index.html) and investigate and customize [Cache class](lib/PHPLicengine/Cache.php) to use preferred cache type.
 
