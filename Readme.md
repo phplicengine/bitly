@@ -60,7 +60,7 @@ if ($bitlink->isCurlError()) {
 print("INFO:<br />");
 
 $res = $result->getResponse(); //It returns the response as it is. In this case in json format
-print_r($res."<br />");
+print($res."<br />");
 
 $reso = $result->getResponseObject(); //It decodes json response. stdClass object.
 print_r($reso);
