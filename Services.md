@@ -16,8 +16,10 @@ If a method doesn't have a Path parameter, Query Parameter will be first argumen
 
 ### Bitlink:
 ```php
+use PHPLicengine\Api\Api;
 use PHPLicengine\Service\Bitlink;
-$bitlink = new Bitlink('API KEY GOES HERE');
+$api = new Api('API KEY GOES HERE');
+$bitlink = new Bitlink($api);
 $result = $bitlink->getMetricsForBitlinkByReferrersByDomains('bit.ly/34nRNvl');
 $result = $bitlink->getMetricsForBitlinkByCountries('bit.ly/34nRNvl', ['unit' => 'day', 'units' => -1]);
 $result = $bitlink->getClicksForBitlink('bit.ly/34nRNvl');
@@ -33,8 +35,10 @@ $result = $bitlink->getMetricsForBitlinkByReferringDomains('bit.ly/34nRNvl');
 
 ### Group:
 ```php
+use PHPLicengine\Api\Api;
 use PHPLicengine\Service\Group;
-$group = new Group('API KEY GOES HERE');
+$api = new Api('API KEY GOES HERE');
+$group = new Group($api);
 $result = $group->getGroupTags('Bjar7NnSIp0');
 $result = $group->getGroupMetricsByReferringNetworks('Bjar7NnSIp0');
 $result = $group->getGroupShortenCounts('Bjar7NnSIp0');
@@ -60,30 +64,38 @@ $result = $organization->getOrganization('Ojar7LjM8Bd');
 
 ### User:
 ```php
+use PHPLicengine\Api\Api;
 use PHPLicengine\Service\User;
-$user = new User('API KEY GOES HERE');
+$api = new Api('API KEY GOES HERE');
+$user = new User($api);
 $result = $user->updateUser(['default_group_guid' => 'Ojar7LjM8Bd', 'name' => 'new name']);
 $result = $user->getUser();
 ```
 
 ### App:
 ```php
+use PHPLicengine\Api\Api;
 use PHPLicengine\Service\App;
-$app = new App('API KEY GOES HERE');
+$api = new Api('API KEY GOES HERE');
+$app = new App($api);
 $result = $app->getOAuthApp($client_id);
 ```
 
 ### Bsd:
 ```php
+use PHPLicengine\Api\Api;
 use PHPLicengine\Service\Bsd;
-$bsd = new Bsd('API KEY GOES HERE');
+$api = new Api('API KEY GOES HERE');
+$bsd = new Bsd($api);
 $result = $bsd->getBSDs();
 ```
 
 ### Custom:
 ```php
+use PHPLicengine\Api\Api;
 use PHPLicengine\Service\Custom;
-$custom = new Custom('API KEY GOES HERE');
+$api = new Api('API KEY GOES HERE');
+$custom = new Custom($api);
 $result = $custom->updateCustomBitlink('bit.ly/34nRNvl', ['bitlink_id' => 'bit.ly/34nRNvl']);
 $result = $custom->getCustomBitlink('bit.ly/34nRNvl');
 $result = $custom->addCustomBitlink(['bitlink_id' => 'bit.ly/34nRNvl', 'custom_bitlink' => 'bit.ly/34furnr']);
@@ -92,8 +104,10 @@ $result = $custom->getCustomBitlinkMetricsByDestination('bit.ly/34nRNvl');
 
 ### Campaign:
 ```php
+use PHPLicengine\Api\Api;
 use PHPLicengine\Service\Campaign;
-$campaign = new Campaign('API KEY GOES HERE');
+$api = new Api('API KEY GOES HERE');
+$campaign = new Campaign($api);
 $result = $campaign->createChannel(['group_guid' => 'Bjar7NnSIp0', 'name' => 'some name']);
 $result = $campaign->getChannels(['group_guid' => 'Bjar7NnSIp0']);
 $result = $campaign->createCampaign(['group_guid' => 'Bjar7NnSIp0', 'channel_guids' => ['some value']]);
@@ -110,11 +124,16 @@ set `$client_id` and `$client_secret` as first and second arguments of Auth clas
 `$bitlypassword` as an array to `exchangeToken()` method:
 
 ```php
+use PHPLicengine\Api\Api;
 use PHPLicengine\Service\Auth;
-$params['username']= '';
-$params['password'] = '';
-$auth = new Auth($client_id, $client_secret);
-$token = $auth->exchangeToken($params);
+$api = new API(null, true);
+$config['clientid_username'] = "";
+$config['clientsecret_password'] = "";
+$params['username'] = "";
+$params['password'] = "";
+$app = new Auth($api, $config);
+$token = $app->exchangeToken($params);
+print($token);
 ```
 
 If you want to use [HTTP Basic Authentication Flow](https://dev.bitly.com/v4/#section/HTTP-Basic-Authentication-Flow)
@@ -122,9 +141,14 @@ set `$bitlyusername` and `$bitlypassword` as first and second arguments of Auth 
 `$client_secret` as an array to `basicAuthFlow()` method:
 
 ```php
+use PHPLicengine\Api\Api;
 use PHPLicengine\Service\Auth;
+$config['clientid_username'] = "";
+$config['clientsecret_password'] = "";
 $params['client_id'] = "";
 $params['client_secret'] = "";
-$auth = new Auth($bitlyusername, $bitlypassword);
-$token = $auth->basicAuthFlow($params);
+$api = new API(null, true);
+$app = new Auth($api, $config);
+$token = $app->basicAuthFlow($params);
+print($token);
 ```
