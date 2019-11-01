@@ -55,8 +55,10 @@ $result = $group->deleteGroup('Bjar7NnSIp0');
 
 ### Organization:
 ```php
+use PHPLicengine\Api\Api;
 use PHPLicengine\Service\Organization;
-$organization = new Organization('API KEY GOES HERE');
+$api = new Api('API KEY GOES HERE');
+$organization = new Organization($api);
 $result = $organization->getOrganizations();
 $result = $organization->getOrganizationShortenCounts('Ojar7LjM8Bd');
 $result = $organization->getOrganization('Ojar7LjM8Bd');
@@ -120,8 +122,8 @@ $result = $campaign->updateChannel('$channel_guid', ['group_guid' => 'some value
 
 ### Auth:
 If you want to use [Exchanging a Username and Password for an Access Token](https://dev.bitly.com/v4/#section/Exchanging-a-Username-and-Password-for-an-Access-Token)
-set `$client_id` and `$client_secret` as first and second arguments of Auth class constructor respectively, and pass `$bitlyusername` and 
-`$bitlypassword` as an array to `exchangeToken()` method:
+set `$client_id` and `$client_secret` as `$config` array like below to pass to Auth class constructor, and pass `$bitlyusername` and 
+`$bitlypassword` as `$params` array like below to `exchangeToken()` method:
 
 ```php
 use PHPLicengine\Api\Api;
@@ -137,8 +139,8 @@ print($token);
 ```
 
 If you want to use [HTTP Basic Authentication Flow](https://dev.bitly.com/v4/#section/HTTP-Basic-Authentication-Flow)
-set `$bitlyusername` and `$bitlypassword` as first and second arguments of Auth class constructor respectively, and pass `$client_id` and 
-`$client_secret` as an array to `basicAuthFlow()` method:
+set `$bitlyusername` and `$bitlypassword` as `$config` array like below to pass to Auth class constructor, and pass `$client_id` and 
+`$client_secret` as `$params` array like below to `basicAuthFlow()` method:
 
 ```php
 use PHPLicengine\Api\Api;
