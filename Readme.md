@@ -1,3 +1,4 @@
+https://travis-ci.org/phplicengine/bitly.svg?branch=master
 [![Latest Stable Version](https://poser.pugx.org/phplicengine/bitly/v/stable)](https://packagist.org/packages/phplicengine/bitly)
 [![Total Downloads](https://poser.pugx.org/phplicengine/bitly/downloads)](https://packagist.org/packages/phplicengine/bitly)
 
