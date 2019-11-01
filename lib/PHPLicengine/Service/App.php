@@ -24,16 +24,16 @@
 namespace PHPLicengine\Service;
 use PHPLicengine\Exception\ResponseException;
 use PHPLicengine\Exception\CurlException;
+use PHPLicengine\Api\ApiInterface;
 
-class App extends \PHPLicengine\Api\Api {
+class App {
  
       private $url;
       
-      public function __construct ($api_key)
+      public function __construct (ApiInterface $api)
       {
-             parent::__construct($api_key);
+             $this->api = $api;
              $this->url = 'https://api-ssl.bitly.com/v4/apps';       
-
       }
  
       /*
@@ -42,7 +42,7 @@ class App extends \PHPLicengine\Api\Api {
       */
       public function getOAuthApp(string $client_id) 
       {
-             return $this->get($this->url . '/'.$client_id);
+             return $this->api->get($this->url . '/'.$client_id);
       }
       
 }
