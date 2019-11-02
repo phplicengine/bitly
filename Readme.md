@@ -1,6 +1,10 @@
 [![Build Status](https://travis-ci.org/phplicengine/bitly.svg?branch=master)](https://travis-ci.org/phplicengine/bitly)
-[![Latest Stable Version](https://poser.pugx.org/phplicengine/bitly/v/stable)](https://packagist.org/packages/phplicengine/bitly)
-[![Total Downloads](https://poser.pugx.org/phplicengine/bitly/downloads)](https://packagist.org/packages/phplicengine/bitly)
+[![Latest Stable Version](https://img.shields.io/packagist/v/phplicengine/bitly?label=version)](https://packagist.org/packages/phplicengine/bitly)
+[![Total Downloads](https://img.shields.io/packagist/dt/phplicengine/bitly?color=blue)](https://packagist.org/packages/phplicengine/bitly)
+[![License](https://img.shields.io/packagist/l/phplicengine/bitly)](https://packagist.org/packages/phplicengine/bitly)
+[![php](https://img.shields.io/packagist/php-v/phplicengine/bitly)](https://packagist.org/packages/phplicengine/bitly)
+
+
 
 # Bitly API v4
 
