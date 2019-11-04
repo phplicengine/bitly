@@ -132,9 +132,9 @@ $config['clientid_username'] = "";
 $config['clientsecret_password'] = "";
 $params['username'] = "";
 $params['password'] = "";
-$api = new API(null, true);
-$app = new Auth($api, $config);
-$token = $app->exchangeToken($params);
+$api = new Api(null, true);
+$auth = new Auth($api, $config);
+$token = $auth->exchangeToken($params);
 print($token);
 ```
 
@@ -149,8 +149,16 @@ $config['clientid_username'] = "";
 $config['clientsecret_password'] = "";
 $params['client_id'] = "";
 $params['client_secret'] = "";
-$api = new API(null, true);
-$app = new Auth($api, $config);
-$token = $app->basicAuthFlow($params);
+$api = new Api(null, true);
+$auth = new Auth($api, $config);
+$token = $auth->basicAuthFlow($params);
 print($token);
+```
+
+If you want to call any of Bitly services immediately after acquiring token, you don't need to instantiate Api class again to pass token to its constructor, you can just use:
+
+```php
+$api->enableJson();
+$api->setApiKey($token);
+$bitlink = new Bitlink($api);
 ```
