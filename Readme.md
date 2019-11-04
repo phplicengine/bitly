@@ -27,7 +27,7 @@ composer require phplicengine/bitly
 use PHPLicengine\Api\Api;
 use PHPLicengine\Service\Bitlink;
 
-$api = new API("API KEY GOES HERE");
+$api = new Api("API KEY GOES HERE");
 $bitlink = new Bitlink($api);
 $result = $bitlink->createBitlink(['long_url' => 'http://www.example.com']);
 
@@ -91,7 +91,7 @@ For example if you want to use [Get Metrics for a Bitlink by countries](https://
 use PHPLicengine\Api\Api;
 use PHPLicengine\Service\Bitlink;
 
-$api = new API("API KEY GOES HERE");
+$api = new Api("API KEY GOES HERE");
 $bitlink = new Bitlink($api);
 $result = $bitlink->getMetricsForBitlinkByCountries('bit.ly/34nRNvl', ['unit' => 'day', 'units' => -1]);
 ```
@@ -106,7 +106,7 @@ Another example:
 use PHPLicengine\Api\Api;
 use PHPLicengine\Service\Group;
 
-$api = new API("API KEY GOES HERE");
+$api = new Api("API KEY GOES HERE");
 $bitlink = new Group($api);
 $result = $bitlink->getGroupShortenCounts($group_guid);
 ```
@@ -126,7 +126,7 @@ If you need to add some CURLOPT_* constants that are not enabled by default, you
 use PHPLicengine\Api\Api;
 use PHPLicengine\Service\Bitlink;
 
-$api = new API("API KEY GOES HERE");
+$api = new Api("API KEY GOES HERE");
 $api->setCurlCallback(function($ch, $params, $headers, $method) { 
       curl_setopt($ch, CURLOPT_*, 'some value'); 
 }); 
