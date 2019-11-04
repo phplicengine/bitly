@@ -58,6 +58,12 @@ class Api implements ApiInterface {
                   }
            }
 
+           public function enableJson() 
+           {
+                      $this->_api_key_var = 'Authorization: Bearer ';
+                      $this->json = true;
+           } 
+           
            public function setApiKey($api_key) 
            { 
                   $this->_api_key = $api_key;
