@@ -107,8 +107,8 @@ use PHPLicengine\Api\Api;
 use PHPLicengine\Service\Group;
 
 $api = new Api("API KEY GOES HERE");
-$bitlink = new Group($api);
-$result = $bitlink->getGroupShortenCounts($group_guid);
+$group = new Group($api);
+$result = $group->getGroupShortenCounts($group_guid);
 ```
 
 Here is [list of available service classes and methods](Services.md).
