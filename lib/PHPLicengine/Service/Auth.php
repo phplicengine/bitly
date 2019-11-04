@@ -60,4 +60,5 @@ class Auth {
              $result = $this->api->post($this->url, $params);
              return $result->getResponse();
       }
+ 
 }
