@@ -2,7 +2,9 @@
     "name": "phplicengine/bitly",
     "type": "library",
     "description": "Bitly API v4",
-    "keywords": ["api","restapi", "bitly", "bit.ly"],
+    "keywords": ["api","restapi", "bitly", "bit.ly", "bitlinks", "bitly-api", "bitly-v4", "bitly-client", 
+                 "url-shortener", "urlshortener", "shortener", "shorten-urls", "shortens-links", "link-shortener", 
+                 "shorturl", "api-client", "api-rest", "api-server", "api-service", "php", "php7", "php72"],
     "license": "Apache-2.0",
     "authors": [
         {
