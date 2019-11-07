@@ -31,12 +31,14 @@ $api = new Api("API KEY GOES HERE");
 $bitlink = new Bitlink($api);
 $result = $bitlink->createBitlink(['long_url' => 'http://www.example.com']);
 
+// if cURL error occurs.
 if ($api->isCurlError()) {
     
-    print ($api->getCurlErrno().': '.$api->getCurlError());
+    print($api->getCurlErrno().': '.$api->getCurlError());
     
 } else {
 
+    // if Bitly response contains error message.
     if ($result->isError()) {
 
         print("Error:<br />");
@@ -45,6 +47,7 @@ if ($api->isCurlError()) {
     
     } else {
     
+       // if Bitly response is 200 or 201
        if ($result->isSuccess()) {
         
           print("SUCCESS:<br />");
@@ -61,17 +64,22 @@ if ($api->isCurlError()) {
     }
 }
 
+// for debug only.
 print("INFO:<br />");
 
+// returns response exactly as it is. e.g. json.
 $resj = $result->getResponse();
 print($resj."<br />");
 
+// returns decoded json.
 $reso = $result->getResponseObject();
 print_r($reso);
 
+// returns header of server.
 $resh = $result->getHeaders();
 print_r($resh);
 
+// returns request.
 $resh = $api->getRequest();
 print_r($resh);
 ```
