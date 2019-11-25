@@ -123,23 +123,23 @@ class Api implements ApiInterface {
                             break;
                             case 'POST':
                                       curl_setopt($ch, CURLOPT_POST, true);
-                                          if ($this->json === true) {
+                                      if ($this->json === true) {
                                           $params = json_encode($params);
-                                          }
-                                          curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+                                      }
+                                      curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
                             break;
                             case 'GET':
                                      curl_setopt($ch, CURLOPT_HTTPGET, true);
-                                          if (!empty($params)) {
-                                          $url .= '?' . http_build_query($params);
-                                          curl_setopt($ch, CURLOPT_URL, $url);
-                                          }
+                                     if (!empty($params)) {
+                                         $url .= '?' . http_build_query($params);
+                                         curl_setopt($ch, CURLOPT_URL, $url);
+                                     }
                             break;
                      }
 
                      $headers[] = $this->_api_key_var.$this->_api_key;
                      if ($this->json === true) {
-                            $headers[] = 'Content-Type: application/json';
+                         $headers[] = 'Content-Type: application/json';
                      }
                   
                      curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
@@ -150,10 +150,10 @@ class Api implements ApiInterface {
 
                      $this->response = curl_exec($ch);
                      if (curl_errno($ch)) {
-                            $this->curlErrno = curl_errno($ch);
-                            $this->curlError = curl_error($ch);
-                            curl_close($ch);
-                            return;
+                         $this->curlErrno = curl_errno($ch);
+                         $this->curlError = curl_error($ch);
+                         curl_close($ch);
+                         return;
                      }
                      $this->curlInfo = curl_getinfo($ch);
                      curl_close($ch);
