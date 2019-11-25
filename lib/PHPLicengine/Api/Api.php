@@ -185,7 +185,6 @@ class Api implements ApiInterface {
                                    }
                             }
                             return $headers;
-                      
                      } else {
                             return http_parse_headers($raw_headers);
                      } 
