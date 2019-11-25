@@ -44,7 +44,7 @@ class Api implements ApiInterface {
               { 
                      if (!function_exists('curl_init')) 
                      { 
-                            throw new CurlException ("cURL is not available. This API wrapper cannot be used."); 
+                            throw new CurlException("cURL is not available. This API wrapper cannot be used."); 
                      } 
                   
                      if (isset($api_key))
@@ -166,25 +166,24 @@ class Api implements ApiInterface {
                             $headers = array();
                             $key = '';
 
-                            foreach(explode("\n", $raw_headers) as $i => $h) {
+                            foreach (explode("\n", $raw_headers) as $i => $h) {
                                    $h = explode(':', $h, 2);
 
                                    if (isset($h[1])) {
-                                   if (!isset($headers[$h[0]]))
-                                          $headers[$h[0]] = trim($h[1]);
-                                   elseif (is_array($headers[$h[0]])) {
+                                   if (!isset($headers[$h[0]])) {
+                                                                             $headers[$h[0]] = trim($h[1]);
+                                   } elseif (is_array($headers[$h[0]])) {
                                                  $headers[$h[0]] = array_merge($headers[$h[0]], array(trim($h[1])));
-                                   }
-                                   else {
+                                   } else {
                                           $headers[$h[0]] = array_merge(array($headers[$h[0]]), array(trim($h[1])));
                                    }
                                    $key = $h[0];
-                                   }
-                                   else { 
-                                          if (substr($h[0], 0, 1) == "\t")
-                                          $headers[$key] .= "\r\n\t".trim($h[0]);
-                                          elseif (!$key) 
-                                          $headers[0] = trim($h[0]); 
+                                   } else { 
+                                          if (substr($h[0], 0, 1) == "\t") {
+                                                                                    $headers[$key] .= "\r\n\t".trim($h[0]);
+                                          } elseif (!$key) {
+                                                                                    $headers[0] = trim($h[0]);
+                                          }
                                    }
                             }
                             return $headers;
@@ -244,17 +243,17 @@ class Api implements ApiInterface {
                      return $this->curlInfo;
               }
 
-              public function isCurlError () 
+              public function isCurlError() 
               {
                      return (bool) $this->curlErrno;
               }
 
-              public function getCurlErrno () 
+              public function getCurlErrno() 
               {
                      return $this->curlErrno;
               }
 
-              public function getCurlError () 
+              public function getCurlError() 
               {
                      return $this->curlError;
               }
