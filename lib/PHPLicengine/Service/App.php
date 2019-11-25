@@ -29,7 +29,8 @@ use PHPLicengine\Api\ApiInterface;
 class App {
  
       private $url;
-      
+      private $api;
+ 
       public function __construct (ApiInterface $api)
       {
              $this->api = $api;
