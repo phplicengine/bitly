@@ -37,7 +37,8 @@ class Api implements ApiInterface {
            protected $response = false;
            protected $request = array();
            protected $json = true;
-           private   $_curl_callback;
+           protected $curlInfo;
+           protected $_curl_callback;
            
            public function __construct($api_key = "", $basic = false) 
            { 
@@ -122,7 +123,7 @@ class Api implements ApiInterface {
                           break;
                           case 'POST':
                                       curl_setopt($ch, CURLOPT_POST, true);
-                                      if ($this->json == true) {
+                                      if ($this->json === true) {
                                           $params = json_encode($params);
                                       }
                                       curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
@@ -137,7 +138,7 @@ class Api implements ApiInterface {
                   }
 
                   $headers[] = $this->_api_key_var.$this->_api_key;
-                  if ($this->json == true) {
+                  if ($this->json === true) {
                       $headers[] = 'Content-Type: application/json';
                   }
                   
