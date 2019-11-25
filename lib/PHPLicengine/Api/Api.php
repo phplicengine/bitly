@@ -115,24 +115,24 @@ class Api implements ApiInterface {
                             call_user_func($this->_curl_callback, $ch, $params, $headers, $method); 
                      } 
                      switch (strtoupper($method)) { 
-                            case 'PUT':              
+                          case 'PUT':
                           case 'PATCH':
                           case 'DELETE':
-                                      curl_setopt($ch, CURLOPT_CUSTOMREQUEST, strtoupper($method));
+                                          curl_setopt($ch, CURLOPT_CUSTOMREQUEST, strtoupper($method));
                                           curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($params));
                             break;
                             case 'POST':
-                                      curl_setopt($ch, CURLOPT_POST, true);
+                                          curl_setopt($ch, CURLOPT_POST, true);
                                           if ($this->json === true) {
-                                          $params = json_encode($params);
+                                                 $params = json_encode($params);
                                           }
                                           curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
                             break;
                             case 'GET':
-                                     curl_setopt($ch, CURLOPT_HTTPGET, true);
+                                          curl_setopt($ch, CURLOPT_HTTPGET, true);
                                           if (!empty($params)) {
-                                          $url .= '?' . http_build_query($params);
-                                          curl_setopt($ch, CURLOPT_URL, $url);
+                                                 $url .= '?'.http_build_query($params);
+                                                 curl_setopt($ch, CURLOPT_URL, $url);
                                           }
                             break;
                      }
