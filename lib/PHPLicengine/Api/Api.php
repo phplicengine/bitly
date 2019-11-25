@@ -148,8 +148,8 @@ class Api implements ApiInterface {
                      $this->request['headers'] = $headers;
                      $this->request['params'] = $params;
 
-                     $this->response = curl_exec($ch);
-                     if (curl_errno($ch)) {
+                     $this->response = curl_exec(/** @scrutinizer ignore-type */ $ch);
+                     if (curl_errno(/** @scrutinizer ignore-type */ $ch)) {
                             $this->curlErrno = curl_errno(/** @scrutinizer ignore-type */ $ch);
                             $this->curlError = curl_error(/** @scrutinizer ignore-type */ $ch);
                             curl_close(/** @scrutinizer ignore-type */ $ch);
