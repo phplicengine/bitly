@@ -38,7 +38,7 @@ class OrganizationTest extends TestCase
                     $this->equalTo('https://api-ssl.bitly.com/v4/organizations')                    
                     );
         $bitlink = new Organization($mock);
-        $bitlink->getOrganizations('test');
+        $bitlink->getOrganizations();
     } 
     
     public function testGetOrganizationShortenCounts()
