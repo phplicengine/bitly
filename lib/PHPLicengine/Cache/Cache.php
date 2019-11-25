@@ -42,7 +42,7 @@ class Cache {
       {
              switch ($this->config['type']) {
                      case 'apc':
-                          $cache = new \Doctrine\Common\Cache\ApcCache();
+                          $cache = new \Doctrine\Common\Cache\ApcuCache();
                      break;
                      case 'file':
                           $cache = new \Doctrine\Common\Cache\FilesystemCache($this->config['path']);
@@ -51,9 +51,6 @@ class Cache {
                           $db = new \SQLite3($this->config['sqlite3_db']);
                           $cache = new \SQLite3Cache($db, $this->config['sqlite3_table']);
                      break;
-                     case 'xcache':
-                          $cache = new \Doctrine\Common\Cache\XcacheCache();
-                      break;
                       default:
                           throw new CacheException('Invalid cache system');
                       break;
