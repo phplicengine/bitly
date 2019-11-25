@@ -81,8 +81,8 @@ $resh = $result->getHeaders();
 print_r($resh);
 
 // returns request.
-$resh = $api->getRequest();
-print_r($resh);
+$resr = $api->getRequest();
+print_r($resr);
 ```
 
 ## Manual
