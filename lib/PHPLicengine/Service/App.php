@@ -31,7 +31,7 @@ class App {
        private $url;
        private $api;
  
-       public function __construct (ApiInterface $api)
+       public function __construct(ApiInterface $api)
        {
               $this->api = $api;
               $this->url = 'https://api-ssl.bitly.com/v4/apps';       
@@ -43,7 +43,7 @@ class App {
       */
        public function getOAuthApp(string $client_id) 
        {
-              return $this->api->get($this->url . '/'.$client_id);
+              return $this->api->get($this->url.'/'.$client_id);
        }
       
 }
