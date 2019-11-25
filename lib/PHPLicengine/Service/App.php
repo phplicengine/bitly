@@ -28,22 +28,22 @@ use PHPLicengine\Api\ApiInterface;
 
 class App {
  
-      private $url;
-      private $api;
+       private $url;
+       private $api;
  
-      public function __construct (ApiInterface $api)
-      {
-             $this->api = $api;
-             $this->url = 'https://api-ssl.bitly.com/v4/apps';       
-      }
+       public function __construct (ApiInterface $api)
+       {
+              $this->api = $api;
+              $this->url = 'https://api-ssl.bitly.com/v4/apps';       
+       }
  
-      /*
+       /*
       Retrieve OAuth App
       https://dev.bitly.com/v4/#operation/getOAuthApp
       */
-      public function getOAuthApp(string $client_id) 
-      {
-             return $this->api->get($this->url . '/'.$client_id);
-      }
+       public function getOAuthApp(string $client_id) 
+       {
+              return $this->api->get($this->url . '/'.$client_id);
+       }
       
 }
