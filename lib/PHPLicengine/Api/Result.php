@@ -29,6 +29,7 @@ class Result {
       protected $message;
       protected $headers;
       protected $curlInfo;
+      protected $body;
       protected $reasonPhrases = array(
                 // INFORMATIONAL CODES
                 100 => 'Continue',
