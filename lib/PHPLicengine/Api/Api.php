@@ -100,16 +100,16 @@ class Api implements ApiInterface {
            private function _call($url, $params = null, $headers = null, $method = "GET") 
            {
                   $ch = curl_init();
-                  curl_setopt($ch, CURLOPT_URL, $url);
-                  curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
-                  curl_setopt($ch, CURLOPT_TIMEOUT, $this->_timeout);
-                  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, $this->_verify_ssl);
-                  curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, $this->_verify_host);
-                  curl_setopt($ch, CURLOPT_HEADER, true);
-                  curl_setopt($ch, CURLINFO_HEADER_OUT, true);
+                  curl_setopt(resource $ch, CURLOPT_URL, $url);
+                  curl_setopt(resource $ch, CURLOPT_FOLLOWLOCATION, false);
+                  curl_setopt(resource $ch, CURLOPT_TIMEOUT, $this->_timeout);
+                  curl_setopt(resource $ch, CURLOPT_RETURNTRANSFER, true);
+                  curl_setopt(resource $ch, CURLOPT_SSL_VERIFYPEER, $this->_verify_ssl);
+                  curl_setopt(resource $ch, CURLOPT_SSL_VERIFYHOST, $this->_verify_host);
+                  curl_setopt(resource $ch, CURLOPT_HEADER, true);
+                  curl_setopt(resource $ch, CURLINFO_HEADER_OUT, true);
                   if ($this->curlProxy) {  
-                      curl_setopt($ch, CURLOPT_PROXY, $this->curlProxy);  
+                      curl_setopt(resource $ch, CURLOPT_PROXY, $this->curlProxy);  
                   }  
                   if ($this->_curl_callback) { 
                       call_user_func($this->_curl_callback, $ch, $params, $headers, $method); 
@@ -118,21 +118,21 @@ class Api implements ApiInterface {
                           case 'PUT':              
                           case 'PATCH':
                           case 'DELETE':
-                                      curl_setopt($ch, CURLOPT_CUSTOMREQUEST, strtoupper($method));
-                                      curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($params));
+                                      curl_setopt(resource $ch, CURLOPT_CUSTOMREQUEST, strtoupper($method));
+                                      curl_setopt(resource $ch, CURLOPT_POSTFIELDS, json_encode($params));
                           break;
                           case 'POST':
-                                      curl_setopt($ch, CURLOPT_POST, true);
+                                      curl_setopt(resource $ch, CURLOPT_POST, true);
                                       if ($this->json === true) {
                                           $params = json_encode($params);
                                       }
-                                      curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+                                      curl_setopt(resource $ch, CURLOPT_POSTFIELDS, $params);
                           break;
                           case 'GET':
-                                     curl_setopt($ch, CURLOPT_HTTPGET, true);
+                                     curl_setopt(resource $ch, CURLOPT_HTTPGET, true);
                                      if (!empty($params)) {
                                          $url .= '?' . http_build_query($params);
-                                         curl_setopt($ch, CURLOPT_URL, $url);
+                                         curl_setopt(resource $ch, CURLOPT_URL, $url);
                                      }
                           break;
                   }
@@ -142,21 +142,21 @@ class Api implements ApiInterface {
                       $headers[] = 'Content-Type: application/json';
                   }
                   
-                  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+                  curl_setopt(resource $ch, CURLOPT_HTTPHEADER, $headers);
 
                   $this->request['method'] = strtoupper($method);
                   $this->request['headers'] = $headers;
                   $this->request['params'] = $params;
 
-                  $this->response = curl_exec($ch);
+                  $this->response = curl_exec(resource $ch);
                   if (curl_errno($ch)) {
-                      $this->curlErrno = curl_errno($ch);
-                      $this->curlError = curl_error($ch);
-                      curl_close($ch);
+                      $this->curlErrno = curl_errno(resource $ch);
+                      $this->curlError = curl_error(resource $ch);
+                      curl_close(resource $ch);
                       return;
                   }
-                  $this->curlInfo = curl_getinfo($ch);
-                  curl_close($ch);
+                  $this->curlInfo = curl_getinfo(resource $ch);
+                  curl_close(resource $ch);
                   return new Result($this->_getBody(), $this->_getHeaders(), $this->curlInfo);
            }
 
