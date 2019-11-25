@@ -49,7 +49,7 @@ class Cache {
                      break;
                      case 'sqlite3':
                           $db = new \SQLite3($this->config['sqlite3_db']);
-                          $cache = new \SQLite3Cache($db, $this->config['sqlite3_table']);
+                          $cache = new \Doctrine\Common\Cache\SQLite3Cache($db, $this->config['sqlite3_table']);
                      break;
                       default:
                           throw new CacheException('Invalid cache system');
