@@ -102,12 +102,12 @@ class Result {
               $this->curlInfo = $curlInfo;
        }
 
-       public function isError () 
+       public function isError() 
        {
               return isset($this->getResponseObject()->errors) && $this->getResponseObject()->errors;
        }
      
-       public function getDescription () 
+       public function getDescription() 
        {
               return $this->getResponseObject()->description;
        }
@@ -127,7 +127,7 @@ class Result {
               return json_decode($this->body);
        }
 
-       public function getResponseArray () 
+       public function getResponseArray() 
        {
               return json_decode($this->body, true);
        }
