@@ -48,18 +48,18 @@ if ($api->isCurlError()) {
     
     } else {
     
-       // if Bitly response is 200 or 201
-       if ($result->isSuccess()) {
+        // if Bitly response is 200 or 201
+        if ($result->isSuccess()) {
         
-          print("SUCCESS:<br />");
-          print($result->getResponse());
-          print_r($result->getResponseArray());
+            print("SUCCESS:<br />");
+            print($result->getResponse());
+            print_r($result->getResponseArray());
 
         } else {
 
-          print("FAIL:<br />");
-          print($result->getResponse());
-          print_r($result->getResponseArray());
+            print("FAIL:<br />");
+            print($result->getResponse());
+            print_r($result->getResponseArray());
 
         }
     }
