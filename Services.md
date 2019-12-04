@@ -115,9 +115,9 @@ $result = $campaign->getChannels(['group_guid' => 'Bjar7NnSIp0']);
 $result = $campaign->createCampaign(['group_guid' => 'Bjar7NnSIp0', 'channel_guids' => ['some value']]);
 $result = $campaign->getCampaigns(['group_guid' => 'Bjar7NnSIp0']);
 $result = $campaign->getCampaign($campaign_guid);
-$result = $campaign->updateCampaign('$campaign_guid', ['group_guid' => 'some value']);
+$result = $campaign->updateCampaign($campaign_guid, ['group_guid' => 'some value']);
 $result = $campaign->getChannel($channel_guid);
-$result = $campaign->updateChannel('$channel_guid', ['group_guid' => 'some value']);
+$result = $campaign->updateChannel($channel_guid, ['group_guid' => 'some value']);
 ```
 
 ### Auth:
