@@ -54,5 +54,14 @@ class User {
       {
              return $this->api->get($this->url);
       }
+ 
+       /*
+      Get Platform Limits
+      https://dev.bitly.com/api-reference#getPlatformLimits
+      */
+      public function getPlatformLimits() 
+      {
+             return $this->api->get($this->url);
+      }
       
 }
