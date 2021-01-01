@@ -62,10 +62,11 @@ class UserTest extends TestCase
             ->expects($this->once())
             ->method('get')
             ->with(
-                    $this->equalTo('https://api-ssl.bitly.com/v4/user/platform_limits')
+                    $this->equalTo('https://api-ssl.bitly.com/v4/user/platform_limits'),
+            $this->identicalTo(['key' => 'value'])
                   );
         $bitlink = new User($mock);
-        $bitlink->getPlatformLimits();
+        $bitlink->getPlatformLimits(['key' => 'value']);
     } 
-
+    
 }
