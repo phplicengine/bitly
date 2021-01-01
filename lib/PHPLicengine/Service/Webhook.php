@@ -1,6 +1,6 @@
 <?php
 
-// Webhooks.php
+// Webhook.php
 #################################################
 ##
 ## PHPLicengine
@@ -26,7 +26,7 @@ use PHPLicengine\Exception\ResponseException;
 use PHPLicengine\Exception\CurlException;
 use PHPLicengine\Api\ApiInterface;
 
-class Webhooks {
+class Webhook {
  
       private $url;
       private $api;      
