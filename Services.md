@@ -106,6 +106,7 @@ $result = $custom->updateCustomBitlink('bit.ly/34nRNvl', ['bitlink_id' => 'bit.l
 $result = $custom->getCustomBitlink('bit.ly/34nRNvl');
 $result = $custom->addCustomBitlink(['bitlink_id' => 'bit.ly/34nRNvl', 'custom_bitlink' => 'bit.ly/34furnr']);
 $result = $custom->getCustomBitlinkMetricsByDestination('bit.ly/34nRNvl');
+$result = $custom->testGetClicksForCustomBitlink($custom_bitlink);
 ```
 
 ### Campaign:
