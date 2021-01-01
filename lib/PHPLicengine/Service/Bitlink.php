@@ -145,4 +145,22 @@ class Bitlink {
              return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/qr', $params);
       }
  
+       /*
+      Get Metrics for a Bitlink by City
+      https://dev.bitly.com/api-reference#getMetricsForBitlinkByCities
+      */
+      public function getMetricsForBitlinkByCities(string $bitlink, array $params = array()) 
+      {
+             return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/cities', $params);
+      }
+
+      /*
+      Get Metrics for a Bitlink by Device Type
+      https://dev.bitly.com/api-reference#getMetricsForBitlinkByDevices
+      */
+      public function getMetricsForBitlinkByDevices(string $bitlink, array $params = array()) 
+      {
+             return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/devices', $params);
+      }
+ 
 }
