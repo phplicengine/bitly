@@ -73,4 +73,13 @@ class Custom  {
              return $this->api->get($this->url . '/'.$custom_bitlink.'/clicks_by_destination');
       }
       
+      /*
+      Get Clicks for a Custom Bitlink's Entire History
+      https://dev.bitly.com/api-reference#getClicksForCustomBitlink
+      */
+      public function getClicksForCustomBitlink(string $custom_bitlink, array $params)
+      {
+             return $this->api->get($this->url . '/'.$custom_bitlink."/clicks", $params);
+      }
+ 
 }
