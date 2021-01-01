@@ -81,5 +81,19 @@ class CustomTest extends TestCase
         $bitlink = new Custom($mock);
         $bitlink->getCustomBitlinkMetricsByDestination('test');
     }     
-
+    
+    public function testGetClicksForCustomBitlink()
+    {
+        $mock = $this->createMock(ApiInterface::class);
+        $mock
+            ->expects($this->once())
+            ->method('get')
+            ->with(
+                    $this->equalTo('https://api-ssl.bitly.com/v4/custom_bitlinks/test/clicks'),
+                    $this->identicalTo(['key' => 'value'])
+                    );
+        $bitlink = new Custom($mock);
+        $bitlink->getClicksForCustomBitlink('test', ['key' => 'value']);
+    } 
+    
 }
