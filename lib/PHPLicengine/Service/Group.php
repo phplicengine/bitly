@@ -144,5 +144,22 @@ class Group {
       {
              return $this->api->delete($this->url . '/'.$group_guid);
       }      
-      
+       /*
+      Get Click Metrics for a Group by City
+      https://dev.bitly.com/api-reference#getGroupMetricsByCities
+      */
+      public function getGroupMetricsByCities(string $group_guid, array $params = array()) 
+      {
+             return $this->api->get($this->url . '/'.$group_guid."/cities", $params);
+      }      
+
+      /*
+      Get Click Metrics for a Group by Device Type
+      https://dev.bitly.com/api-reference#getGroupMetricsByDevices
+      */
+      public function getGroupMetricsByDevices(string $group_guid, array $params = array()) 
+      {
+             return $this->api->get($this->url . '/'.$group_guid."/devices", $params);
+      }   
+     
 }
