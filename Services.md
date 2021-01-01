@@ -170,3 +170,16 @@ $api->enableJson();
 $api->setApiKey($token);
 $bitlink = new Bitlink($api);
 ```
+
+### Webhook:
+```php
+use PHPLicengine\Api\Api;
+use PHPLicengine\Service\Webhook;
+$api = new Api('API KEY GOES HERE');
+$webhook = new Webhook($api);
+$result = $webhook->createWebhook($params);
+$result = $webhook->getWebhooks($organization_guid);
+$result = $webhook->getWebhook($webhook_guid);
+$result = $webhook->updateWebhook$webhook_guid, $params);
+$result = $webhook->deleteWebhook($webhook_guid);
+```
