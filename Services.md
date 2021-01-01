@@ -32,6 +32,8 @@ $result = $bitlink->getClicksSummaryForBitlink('bit.ly/34nRNvl');
 $result = $bitlink->createBitlink(['long_url' => 'http://www.example.com']);
 $result = $bitlink->getMetricsForBitlinkByReferringDomains('bit.ly/34nRNvl');
 $result = $bitlink->getBitlinkQRCode($bitlink);
+$result = $bitlink->getMetricsForBitlinkByCities($bitlink);
+$result = $bitlink->getMetricsForBitlinkByDevices($bitlink);
 ```
 
 ### Group:
