@@ -13,6 +13,7 @@ If a method doesn't have a Path parameter, Query Parameter will be first argumen
 * [Custom](#custom)
 * [Campaign](#campaign)
 * [Auth](#auth)
+* [Webhook]($Webhook)
 
 ### Bitlink:
 ```php
@@ -180,6 +181,6 @@ $webhook = new Webhook($api);
 $result = $webhook->createWebhook($params);
 $result = $webhook->getWebhooks($organization_guid);
 $result = $webhook->getWebhook($webhook_guid);
-$result = $webhook->updateWebhook$webhook_guid, $params);
+$result = $webhook->updateWebhook($webhook_guid, $params);
 $result = $webhook->deleteWebhook($webhook_guid);
 ```
