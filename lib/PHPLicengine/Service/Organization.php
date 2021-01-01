@@ -64,4 +64,13 @@ class Organization {
              return $this->api->get($this->url . '/'.$organization_guid);
       }      
  
+      /*
+      Get Plan Limits
+      https://dev.bitly.com/api-reference#getPlanLimits
+      */
+      public function getPlanLimits(string $organization_guid) 
+      {
+             return $this->api->get($this->url . '/'.$organization_guid."/plan_limits");
+      }
+ 
 }
