@@ -51,6 +51,8 @@ $result = $group->getSortedBitlinks('Bjar7NnSIp0', ['unit' => 'day', 'units' => 
 $result = $group->updateGroup('Bjar7NnSIp0', ['name' => 'new name']);
 $result = $group->getGroup('Bjar7NnSIp0');
 $result = $group->deleteGroup('Bjar7NnSIp0');
+$result = $group->getGroupMetricsByCities($group_guid);
+$result = $group->getGroupMetricsByDevices($group_guid);
 ```
 
 ### Organization:
