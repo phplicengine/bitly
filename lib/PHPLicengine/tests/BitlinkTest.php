@@ -186,11 +186,10 @@ class BitlinkTest extends TestCase
             ->expects($this->once())
             ->method('get')
             ->with(
-                $this->equalTo('https://api-ssl.bitly.com/v4/bitlinks/test/qr'),
-                $this->identicalTo(['key' => 'value'])
+                $this->equalTo('https://api-ssl.bitly.com/v4/bitlinks/test/qr')
             );
         $bitlink = new Bitlink($mock);
-        $bitlink->getBitlinkQRCode('test', ['key' => 'value']);
+        $bitlink->getBitlinkQRCode('test');
     }    
     
     public function testGetMetricsForBitlinkByDevices()
