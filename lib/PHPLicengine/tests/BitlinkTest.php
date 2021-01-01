@@ -192,5 +192,33 @@ class BitlinkTest extends TestCase
         $bitlink = new Bitlink($mock);
         $bitlink->getBitlinkQRCode('test', ['key' => 'value']);
     }    
+    
+    public function testGetMetricsForBitlinkByDevices()
+    {
+        $mock = $this->createMock(ApiInterface::class);
+        $mock
+            ->expects($this->once())
+            ->method('get')
+            ->with(
+                $this->equalTo('https://api-ssl.bitly.com/v4/bitlinks/test/devices'),
+                $this->identicalTo(['key' => 'value'])
+            );
+        $bitlink = new Bitlink($mock);
+        $bitlink->getMetricsForBitlinkByDevices('test', ['key' => 'value']);
+    }    
+    
+    public function testGetMetricsForBitlinkByCities()
+    {
+        $mock = $this->createMock(ApiInterface::class);
+        $mock
+            ->expects($this->once())
+            ->method('get')
+            ->with(
+                $this->equalTo('https://api-ssl.bitly.com/v4/bitlinks/test/cities'),
+                $this->identicalTo(['key' => 'value'])
+            );
+        $bitlink = new Bitlink($mock);
+        $bitlink->getMetricsForBitlinkByCities('test', ['key' => 'value']);
+    }    
 
 }
