@@ -73,6 +73,7 @@ $api = new Api('API KEY GOES HERE');
 $user = new User($api);
 $result = $user->updateUser(['default_group_guid' => 'Ojar7LjM8Bd', 'name' => 'new name']);
 $result = $user->getUser();
+$result = $user->getPlatformLimits();
 ```
 
 ### App:
