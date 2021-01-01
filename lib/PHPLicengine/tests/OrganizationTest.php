@@ -66,5 +66,17 @@ class OrganizationTest extends TestCase
         $bitlink = new Organization($mock);
         $bitlink->getOrganization('test');
     }         
-
+    
+    public function testGetPlanLimits()
+    {
+        $mock = $this->createMock(ApiInterface::class);
+        $mock
+            ->expects($this->once())
+            ->method('get')
+            ->with(
+                    $this->equalTo('https://api-ssl.bitly.com/v4/organizations/test/plan_limits')                    
+                    );
+        $bitlink = new Organization($mock);
+        $bitlink->getPlanLimits('test');
+    }         
 }
