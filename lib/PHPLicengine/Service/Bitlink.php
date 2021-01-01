@@ -140,9 +140,9 @@ class Bitlink {
       Get a QR Code
       https://dev.bitly.com/api-reference#getBitlinkQRCode
       */
-      public function getBitlinkQRCode(string $bitlink, array $params = array()) 
+      public function getBitlinkQRCode(string $bitlink) 
       {
-             return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/qr', $params);
+             return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/qr');
       }
  
        /*
