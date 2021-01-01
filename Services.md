@@ -60,8 +60,9 @@ use PHPLicengine\Service\Organization;
 $api = new Api('API KEY GOES HERE');
 $organization = new Organization($api);
 $result = $organization->getOrganizations();
-$result = $organization->getOrganizationShortenCounts('Ojar7LjM8Bd');
-$result = $organization->getOrganization('Ojar7LjM8Bd');
+$result = $organization->getOrganizationShortenCounts($organization_guid);
+$result = $organization->getOrganization($organization_guid);
+$result = $organization->getPlanLimits($organization_guid);
 ```
 
 ### User:
