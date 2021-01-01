@@ -13,7 +13,7 @@ If a method doesn't have a Path parameter, Query Parameter will be first argumen
 * [Custom](#custom)
 * [Campaign](#campaign)
 * [Auth](#auth)
-* [Webhook]($Webhook)
+* [Webhook](#Webhook)
 
 ### Bitlink:
 ```php
