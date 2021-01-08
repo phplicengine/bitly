@@ -130,7 +130,7 @@ $result = $campaign->updateChannel($channel_guid, ['group_guid' => 'some value']
 ```
 
 ### Auth:
-If you want to use [Exchanging a Username and Password for an Access Token](https://dev.bitly.com/v4/#section/Exchanging-a-Username-and-Password-for-an-Access-Token)
+If you want to use [Exchanging a Username and Password for an Access Token](https://dev.bitly.com/docs/getting-started/authentication)
 set `$client_id` and `$client_secret` as `$config` array like below to pass to Auth class constructor, and pass `$bitlyusername` and 
 `$bitlypassword` as `$params` array like below to `exchangeToken()` method:
 
@@ -147,7 +147,7 @@ $token = $auth->exchangeToken($params);
 print($token);
 ```
 
-If you want to use [HTTP Basic Authentication Flow](https://dev.bitly.com/v4/#section/HTTP-Basic-Authentication-Flow)
+If you want to use [HTTP Basic Authentication Flow](https://dev.bitly.com/docs/getting-started/authentication)
 set `$bitlyusername` and `$bitlypassword` as `$config` array like below to pass to Auth class constructor, and pass `$client_id` and 
 `$client_secret` as `$params` array like below to `basicAuthFlow()` method:
 
