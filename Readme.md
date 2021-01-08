@@ -94,7 +94,7 @@ In [Bitly API v4](https://dev.bitly.com/v4/) documentations, resources are class
 Bitlink, Group, Organization, User, Custom, Campaign, Bsd, App, Auth, Webhook
 
 We made each of them as a separate service class. Method names are the same as the last part of documentation url.
-For example if you want to use [Get Metrics for a Bitlink by countries](https://dev.bitly.com/v4/#operation/getMetricsForBitlinkByCountries), this one is classified under Bitlink category in documentation and the last part of its url is `getMetricsForBitlinkByCountries`, so you can call it this way:
+For example if you want to use [Get Metrics for a Bitlink by countries](https://dev.bitly.com/api-reference#getMetricsForBitlinkByCountries), this one is classified under Bitlink category in documentation and the last part of its url is `getMetricsForBitlinkByCountries`, so you can call it this way:
 
 ```php
 use PHPLicengine\Api\Api;
@@ -109,7 +109,7 @@ All Path parameters, must be passed as string in first argument of methods if ne
 
 Another example:
 
-[Retrieve Group Shorten Counts](https://dev.bitly.com/v4/#operation/getGroupShortenCounts) is classified under Group category, and the last part of its link is `getGroupShortenCounts`, so you can call it this way:
+[Retrieve Group Shorten Counts](https://dev.bitly.com/api-reference#getGroupShortenCounts) is classified under Group category, and the last part of its link is `getGroupShortenCounts`, so you can call it this way:
 
 ```php
 use PHPLicengine\Api\Api;
