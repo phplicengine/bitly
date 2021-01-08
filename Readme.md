@@ -89,12 +89,12 @@ print_r($resr);
 
 #### Service Classes
 
-In [Bitly API v4](https://dev.bitly.com/v4/) documentations, resources are classified under serveral categories:
+In [Bitly API v4](https://dev.bitly.com/api-reference) documentations, resources are classified under serveral categories:
 
 Bitlink, Group, Organization, User, Custom, Campaign, Bsd, App, Auth, Webhook
 
 We made each of them as a separate service class. Method names are the same as the last part of documentation url.
-For example if you want to use [Get Metrics for a Bitlink by a Country](https://dev.bitly.com/api-reference#getMetricsForBitlinkByCountries), this one is classified under Bitlink category in documentation and the last part of its url is `getMetricsForBitlinkByCountries`, so you can call it this way:
+For example if you want to use [Get Metrics for a Bitlink by Country](https://dev.bitly.com/api-reference#getMetricsForBitlinkByCountries), this one is classified under Bitlink category in documentation and the last part of its url is `getMetricsForBitlinkByCountries`, so you can call it this way:
 
 ```php
 use PHPLicengine\Api\Api;
