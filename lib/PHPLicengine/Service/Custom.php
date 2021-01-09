@@ -39,7 +39,7 @@ class Custom  {
  
       /*
       Update Custom Bitlink
-      https://dev.bitly.com/v4/#operation/updateCustomBitlink
+      https://dev.bitly.com/api-reference#updateCustomBitlink
       */
       public function updateCustomBitlink(string $custom_bitlink, array $params)
       {
@@ -48,7 +48,7 @@ class Custom  {
 
       /*
       Retrieve Custom Bitlink
-      https://dev.bitly.com/v4/#operation/getCustomBitlink
+      https://dev.bitly.com/api-reference#getCustomBitlink
       */
       public function getCustomBitlink(string $custom_bitlink)
       {
@@ -57,7 +57,7 @@ class Custom  {
       
       /*
       Add Custom Bitlink
-      https://dev.bitly.com/v4/#operation/addCustomBitlink
+      https://dev.bitly.com/api-reference#addCustomBitlink
       */
       public function addCustomBitlink(array $params)
       {
@@ -66,7 +66,7 @@ class Custom  {
       
       /*
       Get Metrics for a Custom Bitlink by destination
-      https://dev.bitly.com/v4/#operation/getCustomBitlinkMetricsByDestination
+      https://dev.bitly.com/api-reference#getCustomBitlinkMetricsByDestination
       */
       public function getCustomBitlinkMetricsByDestination(string $custom_bitlink)
       {
