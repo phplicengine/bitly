@@ -38,6 +38,15 @@ class OAuth {
        }
  
        /*
+       Retrieve OAuth App
+       https://dev.bitly.com/v4/#operation/getOAuthApp
+       */
+       public function getOAuthApp(string $client_id) 
+       {
+              return $this->api->get($this->url.'/v4/apps/'.$client_id);
+       }
+
+       /*
        OAuth web flow
        https://dev.bitly.com/docs/getting-started/authentication
        */
