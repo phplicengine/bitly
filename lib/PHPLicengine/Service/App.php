@@ -21,7 +21,7 @@
 ## limitations under the License.
 #################################################
 
-// IMPORTANT NOTE: This class remains here for backward compatibility. Please use Oauth class instead.
+// IMPORTANT NOTE: This class remains here for backward compatibility. Please use OAuth class instead.
 
 namespace PHPLicengine\Service;
 use PHPLicengine\Exception\ResponseException;
