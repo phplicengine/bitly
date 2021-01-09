@@ -39,7 +39,7 @@ class Campaign {
  
       /*
       Create Channel
-      https://dev.bitly.com/v4/#operation/createChannel
+      https://dev.bitly.com/api-reference#createChannel
       */
       public function createChannel(array $params)
       {
@@ -48,7 +48,7 @@ class Campaign {
 
       /*
       Retrieve Channels
-      https://dev.bitly.com/v4/#operation/getChannels
+      https://dev.bitly.com/api-reference#getChannels
       */
       public function getChannels(array $params)
       {
@@ -57,7 +57,7 @@ class Campaign {
       
       /*
       Create Campaign
-      https://dev.bitly.com/v4/#operation/createCampaign
+      https://dev.bitly.com/api-reference#createCampaign
       */
       public function createCampaign(array $params)
       {
@@ -66,7 +66,7 @@ class Campaign {
       
       /*
       Retrieve Campaigns
-      https://dev.bitly.com/v4/#operation/getCampaigns
+      https://dev.bitly.com/api-reference#getCampaigns
       */
       public function getCampaigns(array $params)
       {
@@ -75,7 +75,7 @@ class Campaign {
       
       /*
       Retrieve a Campaign
-      https://dev.bitly.com/v4/#operation/getCampaign
+      https://dev.bitly.com/api-reference#getCampaign
       */
       public function getCampaign(string $campaign_guid)
       {
@@ -84,7 +84,7 @@ class Campaign {
       
       /*
       Update Campaign
-      https://dev.bitly.com/v4/#operation/updateCampaign
+      https://dev.bitly.com/api-reference#updateCampaign
       */
       public function updateCampaign(string $campaign_guid, array $params)
       {
@@ -93,7 +93,7 @@ class Campaign {
       
       /*
       Get A Channel
-      https://dev.bitly.com/v4/#operation/getChannel
+      https://dev.bitly.com/api-reference#getChannel
       */
       public function getChannel(string $channel_guid)
       {
@@ -102,7 +102,7 @@ class Campaign {
       
       /*
       Update A Channel
-      https://dev.bitly.com/v4/#operation/updateChannel
+      https://dev.bitly.com/api-reference#updateChannel
       */
       public function updateChannel(string $channel_guid, array $params)
       {
