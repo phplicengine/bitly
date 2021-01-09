@@ -148,6 +148,9 @@ class Api implements ApiInterface {
                      if ($this->json === true) {
                             $headers[] = 'Content-Type: application/json';
                      }
+                     if ($this->accept === true) {
+                            $headers[] = 'Accept: application/json';
+                     }
                   
                      curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_HTTPHEADER, $headers);
 
