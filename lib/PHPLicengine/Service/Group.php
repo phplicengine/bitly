@@ -144,7 +144,8 @@ class Group {
       {
              return $this->api->delete($this->url . '/'.$group_guid);
       }      
-       /*
+ 
+      /*
       Get Click Metrics for a Group by City
       https://dev.bitly.com/api-reference#getGroupMetricsByCities
       */
