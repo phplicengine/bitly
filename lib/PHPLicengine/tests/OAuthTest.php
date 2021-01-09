@@ -40,4 +40,18 @@ class OAuthTest extends TestCase
         $app->getOAuthApp('test');
     } 
 
+    public function testGetOAuthToken()
+    {
+        $mock = $this->createMock(ApiInterface::class);
+        $mock
+            ->expects($this->once())
+            ->method('post')
+            ->with(
+                    $this->equalTo('https://api-ssl.bitly.com/oauth/access_token'),      
+                    $this->identicalTo(['key' => 'value'])
+                    );
+        $oauth = new OAuth($mock);
+        $oauth->getOAuthToken(['key' => 'value']);
+    }        
+
 }
