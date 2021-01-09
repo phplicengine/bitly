@@ -39,7 +39,7 @@ class Group {
  
       /*
       Retrieve Tags by Group
-      https://dev.bitly.com/v4/#operation/getGroupTags
+      https://dev.bitly.com/api-reference#getGroupTags
       */
       public function getGroupTags(string $group_guid) 
       {
@@ -48,7 +48,7 @@ class Group {
       
       /*
       Get Click Metrics for a Group by referring networks
-      https://dev.bitly.com/v4/#operation/GetGroupMetricsByReferringNetworks
+      https://dev.bitly.com/api-reference#GetGroupMetricsByReferringNetworks
       */
       public function getGroupMetricsByReferringNetworks(string $group_guid) 
       {
@@ -57,7 +57,7 @@ class Group {
       
       /*
       Retrieve Group Shorten Counts
-      https://dev.bitly.com/v4/#operation/getGroupShortenCounts
+      https://dev.bitly.com/api-reference#getGroupShortenCounts
       */
       public function getGroupShortenCounts(string $group_guid) 
       {
@@ -66,7 +66,7 @@ class Group {
 
       /*
       Retrieve Groups
-      https://dev.bitly.com/v4/#operation/getGroups
+      https://dev.bitly.com/api-reference#getGroups
       */
       public function getGroups(array $params = array()) 
       {
@@ -75,7 +75,7 @@ class Group {
       
       /*
       Retrieve Group Preferences
-      https://dev.bitly.com/v4/#operation/getGroupPreferences
+      https://dev.bitly.com/api-reference#getGroupPreferences
       */
       public function getGroupPreferences(string $group_guid) 
       {
@@ -84,7 +84,7 @@ class Group {
       
       /*
       Update Group Preferences
-      https://dev.bitly.com/v4/#operation/updateGroupPreferences
+      https://dev.bitly.com/api-reference#updateGroupPreferences
       */
       public function updateGroupPreferences(string $group_guid, array $params) 
       {
@@ -102,7 +102,7 @@ class Group {
 
       /*
       Get Click Metrics for a Group by countries
-      https://dev.bitly.com/v4/#operation/getGroupMetricsByCountries
+      https://dev.bitly.com/api-reference#getGroupMetricsByCountries
       */
       public function getGroupMetricsByCountries(string $group_guid) 
       {
@@ -120,7 +120,7 @@ class Group {
 
       /*
       Update a Group
-      https://dev.bitly.com/v4/#operation/updateGroup
+      https://dev.bitly.com/api-reference#updateGroup
       */
       public function updateGroup(string $group_guid, array $params) 
       {
@@ -129,7 +129,7 @@ class Group {
       
       /*
       Retrieve a Group
-      https://dev.bitly.com/v4/#operation/getGroup
+      https://dev.bitly.com/api-reference#getGroup
       */
       public function getGroup(string $group_guid) 
       {
