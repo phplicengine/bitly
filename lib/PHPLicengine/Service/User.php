@@ -39,7 +39,7 @@ class User {
  
       /*
       Update a User
-      https://dev.bitly.com/v4/#operation/updateUser
+      https://dev.bitly.com/api-reference#updateUser
       */
       public function updateUser(array $params) 
       {
@@ -48,7 +48,7 @@ class User {
       
       /*
       Retrieve a User
-      https://dev.bitly.com/v4/#operation/getUser
+      https://dev.bitly.com/api-reference#getUser
       */
       public function getUser() 
       {
