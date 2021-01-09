@@ -39,7 +39,7 @@ class Bsd {
  
       /*
       Get BSDs
-      https://dev.bitly.com/v4/#operation/getBSDs
+      https://dev.bitly.com/api-reference#getBSDs
       */
       public function getBSDs() 
       {
