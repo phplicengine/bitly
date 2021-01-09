@@ -36,4 +36,7 @@ interface ApiInterface
        public function patch($url, $params = null, $headers = null); 
     
        public function setApiKey($api_key);
+       
+       public function setOAuth();
+       
 }
