@@ -27,7 +27,19 @@ use PHPUnit\Framework\TestCase;
 
 class OAuthTest extends TestCase
 {
-
+    public function testGetOAuthApp()
+    {
+        $mock = $this->createMock(ApiInterface::class);
+        $mock
+            ->expects($this->once())
+            ->method('get')
+            ->with(
+                    $this->equalTo('https://api-ssl.bitly.com/v4/apps/test')
+                    );
+        $app = new OAuth($mock);
+        $app->getOAuthApp('test');
+    } 
+    
     public function testGetOAuthToken()
     {
         $mock = $this->createMock(ApiInterface::class);
