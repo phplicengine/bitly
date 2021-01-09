@@ -93,7 +93,7 @@ class Group {
 
       /*
       Retrieve Bitlinks by Group
-      https://dev.bitly.com/v4/#operation/getBitlinksByGroup
+      https://dev.bitly.com/api-reference#getBitlinksByGroup
       */
       public function getBitlinksByGroup(string $group_guid, array $params = array()) 
       {
@@ -111,7 +111,7 @@ class Group {
       
       /*
       Retrieve Sorted Bitlinks for Group
-      https://dev.bitly.com/v4/#operation/getSortedBitlinks
+      https://dev.bitly.com/api-reference#getSortedBitlinks
       */
       public function getSortedBitlinks(string $group_guid, array $params = array(), string $sort = 'clicks') 
       {
