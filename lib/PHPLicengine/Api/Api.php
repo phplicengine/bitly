@@ -41,7 +41,7 @@ class Api implements ApiInterface {
               protected $curlInfo;
               protected $_curl_callback;
 
-              public function __construct($api_key = "", $access = "") 
+              public function __construct($api_key = "", $basic = "") 
               { 
                      if (!function_exists('curl_init')) 
                      { 
@@ -53,17 +53,18 @@ class Api implements ApiInterface {
                             $this->setApiKey($api_key);
                      } 
                   
-                     if (strtolower($access) == "oauth") {
-                         
-                            $this->_api_key_var = '';
-                            $this->json = false;
-                            $this->accept = true;
-                            
-                     } elseif (strtolower($access) == "token") {
-                         
+                     if ($basic === true) 
+                     {
                             $this->_api_key_var = 'Authorization: Basic ';
                             $this->json = false;
                      }
+              }
+
+              public function setOAuth()
+              {
+                     $this->_api_key_var = '';
+                     $this->json = false;
+                     $this->accept = true;
               }
   
               public function enableJson() 
