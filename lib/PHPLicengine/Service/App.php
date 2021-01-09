@@ -21,6 +21,8 @@
 ## limitations under the License.
 #################################################
 
+// IMPORTANT NOTE: This class remains here for backward compatibility. Please use Oauth class instead.
+
 namespace PHPLicengine\Service;
 use PHPLicengine\Exception\ResponseException;
 use PHPLicengine\Exception\CurlException;
