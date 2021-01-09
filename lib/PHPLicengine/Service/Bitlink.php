@@ -39,7 +39,7 @@ class Bitlink {
       
       /*
       Get Metrics for a Bitlink by referrers by domain
-      https://dev.bitly.com/v4/#operation/getMetricsForBitlinkByReferrersByDomains
+      https://dev.bitly.com/api-reference#getMetricsForBitlinkByReferrersByDomains
       */
       public function getMetricsForBitlinkByReferrersByDomains(string $bitlink, array $params = array()) 
       {
@@ -48,7 +48,7 @@ class Bitlink {
       
       /*
       Get Metrics for a Bitlink by countries
-      https://dev.bitly.com/v4/#operation/getMetricsForBitlinkByCountries
+      https://dev.bitly.com/api-reference#getMetricsForBitlinkByCountries
       */             
       public function getMetricsForBitlinkByCountries(string $bitlink, array $params = array()) 
       {
@@ -57,7 +57,7 @@ class Bitlink {
 
       /*
       Get Clicks for a Bitlink
-      https://dev.bitly.com/v4/#operation/getClicksForBitlink
+      https://dev.bitly.com/api-reference#getClicksForBitlink
       */
       public function getClicksForBitlink(string $bitlink, array $params = array()) 
       {
@@ -66,7 +66,7 @@ class Bitlink {
 
       /*
       Expand a Bitlink
-      https://dev.bitly.com/v4/#operation/expandBitlink
+      https://dev.bitly.com/api-reference#expandBitlink
       */
       public function expandBitlink(array $params) 
       {
@@ -75,7 +75,7 @@ class Bitlink {
       
       /*
       Get Metrics for a Bitlink by referrers
-      https://dev.bitly.com/v4/#operation/getMetricsForBitlinkByReferrers
+      https://dev.bitly.com/api-reference#getMetricsForBitlinkByReferrers
       */
       public function getMetricsForBitlinkByReferrers(string $bitlink, array $params = array()) 
       {
@@ -84,7 +84,7 @@ class Bitlink {
       
       /*
       Create a Bitlink
-      https://dev.bitly.com/v4/#operation/createFullBitlink
+      https://dev.bitly.com/api-reference#createFullBitlink
       */
       public function createFullBitlink(array $params) 
       {
@@ -93,7 +93,7 @@ class Bitlink {
       
       /*
       Update a Bitlink
-      https://dev.bitly.com/v4/#operation/updateBitlink
+      https://dev.bitly.com/api-reference#updateBitlink
       */
       public function updateBitlink(string $bitlink, array $params) 
       {
@@ -102,7 +102,7 @@ class Bitlink {
 
       /*
       Retrieve a Bitlink
-      https://dev.bitly.com/v4/#operation/getBitlink
+      https://dev.bitly.com/api-reference#getBitlink
       */
       public function getBitlink(string $bitlink) 
       {
@@ -111,7 +111,7 @@ class Bitlink {
 
       /*
       Get Clicks Summary for a Bitlink
-      https://dev.bitly.com/v4/#operation/getClicksSummaryForBitlink
+      https://dev.bitly.com/api-reference#getClicksSummaryForBitlink
       */
       public function getClicksSummaryForBitlink(string $bitlink, array $params = array()) 
       {
@@ -120,7 +120,7 @@ class Bitlink {
 
       /*
       Shorten a Link
-      https://dev.bitly.com/v4/#operation/createBitlink
+      https://dev.bitly.com/api-reference#createBitlink
       */
       public function createBitlink(array $params) 
       {
@@ -129,7 +129,7 @@ class Bitlink {
 
       /*
       Get Metrics for a Bitlink by referring domains
-      https://dev.bitly.com/v4/#operation/getMetricsForBitlinkByReferringDomains
+      https://dev.bitly.com/api-reference#getMetricsForBitlinkByReferringDomains
       */
       public function getMetricsForBitlinkByReferringDomains(string $bitlink, array $params = array()) 
       {
