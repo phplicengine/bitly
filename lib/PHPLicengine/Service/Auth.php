@@ -42,7 +42,7 @@ class Auth {
  
       /*
       Exchanging a Username and Password for an Access Token
-      https://dev.bitly.com/v4/#section/Exchanging-a-Username-and-Password-for-an-Access-Token
+      https://dev.bitly.com/docs/getting-started/authentication
       */
       public function exchangeToken(array $params)
       {
@@ -53,7 +53,7 @@ class Auth {
 
       /*
       HTTP Basic Authentication Flow
-      https://dev.bitly.com/v4/#section/HTTP-Basic-Authentication-Flow
+      https://dev.bitly.com/docs/getting-started/authentication
       */
       public function basicAuthFlow(array $params)
       {
