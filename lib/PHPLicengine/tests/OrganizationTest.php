@@ -79,4 +79,5 @@ class OrganizationTest extends TestCase
         $bitlink = new Organization($mock);
         $bitlink->getPlanLimits('test');
     }         
+    
 }
