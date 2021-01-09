@@ -145,7 +145,7 @@ class Bitlink {
              return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/qr');
       }
  
-       /*
+      /*
       Get Metrics for a Bitlink by City
       https://dev.bitly.com/api-reference#getMetricsForBitlinkByCities
       */
