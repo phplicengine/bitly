@@ -38,9 +38,9 @@ class App {
        }
  
        /*
-      Retrieve OAuth App
-      https://dev.bitly.com/v4/#operation/getOAuthApp
-      */
+       Retrieve OAuth App
+       https://dev.bitly.com/v4/#operation/getOAuthApp
+       */
        public function getOAuthApp(string $client_id) 
        {
               return $this->api->get($this->url.'/'.$client_id);
