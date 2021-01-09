@@ -35,7 +35,7 @@ $result = $bitlink->getMetricsForBitlinkByReferringDomains('bit.ly/34nRNvl');
 $result = $bitlink->getBitlinkQRCode($bitlink);
 $result = $bitlink->getMetricsForBitlinkByCities($bitlink);
 $result = $bitlink->getMetricsForBitlinkByDevices($bitlink);
-`getSortedBitlinks()` and `getBitlinksByGroup()` are in `Group` service.
+getSortedBitlinks() and getBitlinksByGroup() are in `Group` service.
 ```
 
 ### Group:
