@@ -39,7 +39,7 @@ class Organization {
  
       /*
       Retrieve Organizations
-      https://dev.bitly.com/v4/#operation/getOrganizations
+      https://dev.bitly.com/api-reference#getOrganizations
       */
       public function getOrganizations() 
       {
@@ -48,7 +48,7 @@ class Organization {
       
       /*
       Retrieve Organization Shorten Counts
-      https://dev.bitly.com/v4/#operation/getOrganizationShortenCounts
+      https://dev.bitly.com/api-reference#getOrganizationShortenCounts
       */
       public function getOrganizationShortenCounts(string $organization_guid) 
       {
@@ -57,7 +57,7 @@ class Organization {
       
       /*
       Retrieve an Organization
-      https://dev.bitly.com/v4/#operation/getOrganization
+      https://dev.bitly.com/api-reference#getOrganization
       */
       public function getOrganization(string $organization_guid) 
       {
