@@ -39,7 +39,6 @@ class Auth {
              $api->setApiKey($key);
       }
  
- 
       /*
       Exchanging a Username and Password for an Access Token
       https://dev.bitly.com/docs/getting-started/authentication
