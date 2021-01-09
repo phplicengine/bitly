@@ -52,6 +52,7 @@ class OAuth {
        */
        public function getOAuthToken(array $params) 
        {
+              $this->api->setOAuth();
               return $this->api->post($this->url.'/oauth/access_token', $params);
        }
       
