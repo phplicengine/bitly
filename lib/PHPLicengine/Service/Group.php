@@ -28,139 +28,139 @@ use PHPLicengine\Api\ApiInterface;
 
 class Group {
  
-      private $url;
-      private $api;      
+       private $url;
+       private $api;      
       
-      public function __construct (ApiInterface $api)
-      {
-             $this->api = $api;
-             $this->url = 'https://api-ssl.bitly.com/v4/groups';       
-      }
+       public function __construct (ApiInterface $api)
+       {
+              $this->api = $api;
+              $this->url = 'https://api-ssl.bitly.com/v4/groups';       
+       }
  
-      /*
+       /*
       Retrieve Tags by Group
       https://dev.bitly.com/api-reference#getGroupTags
       */
-      public function getGroupTags(string $group_guid) 
-      {
-             return $this->api->get($this->url . '/'.$group_guid.'/tags');
-      }
+       public function getGroupTags(string $group_guid) 
+       {
+              return $this->api->get($this->url . '/'.$group_guid.'/tags');
+       }
       
-      /*
+       /*
       Get Click Metrics for a Group by referring networks
       https://dev.bitly.com/api-reference#GetGroupMetricsByReferringNetworks
       */
-      public function getGroupMetricsByReferringNetworks(string $group_guid) 
-      {
-             return $this->api->get($this->url . '/'.$group_guid.'/referring_networks');
-      }
+       public function getGroupMetricsByReferringNetworks(string $group_guid) 
+       {
+              return $this->api->get($this->url . '/'.$group_guid.'/referring_networks');
+       }
       
-      /*
+       /*
       Retrieve Group Shorten Counts
       https://dev.bitly.com/api-reference#getGroupShortenCounts
       */
-      public function getGroupShortenCounts(string $group_guid) 
-      {
-             return $this->api->get($this->url . '/'.$group_guid.'/shorten_counts');
-      }
+       public function getGroupShortenCounts(string $group_guid) 
+       {
+              return $this->api->get($this->url . '/'.$group_guid.'/shorten_counts');
+       }
 
-      /*
+       /*
       Retrieve Groups
       https://dev.bitly.com/api-reference#getGroups
       */
-      public function getGroups(array $params = array()) 
-      {
-             return $this->api->get($this->url, $params);
-      }
+       public function getGroups(array $params = array()) 
+       {
+              return $this->api->get($this->url, $params);
+       }
       
-      /*
+       /*
       Retrieve Group Preferences
       https://dev.bitly.com/api-reference#getGroupPreferences
       */
-      public function getGroupPreferences(string $group_guid) 
-      {
-             return $this->api->get($this->url . '/'.$group_guid.'/preferences');
-      }
+       public function getGroupPreferences(string $group_guid) 
+       {
+              return $this->api->get($this->url . '/'.$group_guid.'/preferences');
+       }
       
-      /*
+       /*
       Update Group Preferences
       https://dev.bitly.com/api-reference#updateGroupPreferences
       */
-      public function updateGroupPreferences(string $group_guid, array $params) 
-      {
-             return $this->api->patch($this->url . '/'.$group_guid.'/preferences', $params);
-      }
+       public function updateGroupPreferences(string $group_guid, array $params) 
+       {
+              return $this->api->patch($this->url . '/'.$group_guid.'/preferences', $params);
+       }
 
-      /*
+       /*
       Retrieve Bitlinks by Group
       https://dev.bitly.com/api-reference#getBitlinksByGroup
       */
-      public function getBitlinksByGroup(string $group_guid, array $params = array()) 
-      {
-             return $this->api->get($this->url . '/'.$group_guid.'/bitlinks', $params);
-      }
+       public function getBitlinksByGroup(string $group_guid, array $params = array()) 
+       {
+              return $this->api->get($this->url . '/'.$group_guid.'/bitlinks', $params);
+       }
 
-      /*
+       /*
       Get Click Metrics for a Group by countries
       https://dev.bitly.com/api-reference#getGroupMetricsByCountries
       */
-      public function getGroupMetricsByCountries(string $group_guid) 
-      {
-             return $this->api->get($this->url . '/'.$group_guid.'/countries');
-      }
+       public function getGroupMetricsByCountries(string $group_guid) 
+       {
+              return $this->api->get($this->url . '/'.$group_guid.'/countries');
+       }
       
-      /*
+       /*
       Retrieve Sorted Bitlinks for Group
       https://dev.bitly.com/api-reference#getSortedBitlinks
       */
-      public function getSortedBitlinks(string $group_guid, array $params = array(), string $sort = 'clicks') 
-      {
-             return $this->api->get($this->url . '/'.$group_guid.'/bitlinks/'.$sort, $params);
-      }
+       public function getSortedBitlinks(string $group_guid, array $params = array(), string $sort = 'clicks') 
+       {
+              return $this->api->get($this->url . '/'.$group_guid.'/bitlinks/'.$sort, $params);
+       }
 
-      /*
+       /*
       Update a Group
       https://dev.bitly.com/api-reference#updateGroup
       */
-      public function updateGroup(string $group_guid, array $params) 
-      {
-             return $this->api->patch($this->url . '/'.$group_guid, $params);
-      }      
+       public function updateGroup(string $group_guid, array $params) 
+       {
+              return $this->api->patch($this->url . '/'.$group_guid, $params);
+       }      
       
-      /*
+       /*
       Retrieve a Group
       https://dev.bitly.com/api-reference#getGroup
       */
-      public function getGroup(string $group_guid) 
-      {
-             return $this->api->get($this->url . '/'.$group_guid);
-      }      
+       public function getGroup(string $group_guid) 
+       {
+              return $this->api->get($this->url . '/'.$group_guid);
+       }      
       
-      /*
+       /*
       Delete a Group
       https://dev.bitly.com/v4/#operation/deleteGroup
       */
-      public function deleteGroup(string $group_guid) 
-      {
-             return $this->api->delete($this->url . '/'.$group_guid);
-      }      
+       public function deleteGroup(string $group_guid) 
+       {
+              return $this->api->delete($this->url . '/'.$group_guid);
+       }      
  
-      /*
+       /*
       Get Click Metrics for a Group by City
       https://dev.bitly.com/api-reference#getGroupMetricsByCities
       */
-      public function getGroupMetricsByCities(string $group_guid, array $params = array()) 
-      {
-             return $this->api->get($this->url . '/'.$group_guid."/cities", $params);
-      }      
+       public function getGroupMetricsByCities(string $group_guid, array $params = array()) 
+       {
+              return $this->api->get($this->url . '/'.$group_guid."/cities", $params);
+       }      
 
-      /*
+       /*
       Get Click Metrics for a Group by Device Type
       https://dev.bitly.com/api-reference#getGroupMetricsByDevices
       */
-      public function getGroupMetricsByDevices(string $group_guid, array $params = array()) 
-      {
-             return $this->api->get($this->url . '/'.$group_guid."/devices", $params);
-      }   
+       public function getGroupMetricsByDevices(string $group_guid, array $params = array()) 
+       {
+              return $this->api->get($this->url . '/'.$group_guid."/devices", $params);
+       }   
      
 }
