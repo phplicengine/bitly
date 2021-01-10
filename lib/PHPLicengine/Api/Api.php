@@ -41,7 +41,7 @@ class Api implements ApiInterface {
               protected $curlInfo;
               protected $_curl_callback;
 
-              public function __construct($api_key = null, $basic = false) 
+              public function __construct($api_key = "", $basic = "") 
               { 
                      if (!function_exists('curl_init')) 
                      { 
