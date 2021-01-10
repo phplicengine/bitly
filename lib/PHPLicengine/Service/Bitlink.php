@@ -31,7 +31,7 @@ class Bitlink {
        private $url;
        private $api;      
       
-       public function __construct (ApiInterface $api)
+       public function __construct(ApiInterface $api)
        {
               $this->api = $api;
               $this->url = 'https://api-ssl.bitly.com/v4';       
@@ -43,7 +43,7 @@ class Bitlink {
       */
        public function getMetricsForBitlinkByReferrersByDomains(string $bitlink, array $params = array()) 
        {
-              return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/referrers_by_domains', $params);
+              return $this->api->get($this->url.'/bitlinks/'.$bitlink.'/referrers_by_domains', $params);
        }
       
        /*
@@ -52,7 +52,7 @@ class Bitlink {
       */             
        public function getMetricsForBitlinkByCountries(string $bitlink, array $params = array()) 
        {
-              return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/countries', $params);
+              return $this->api->get($this->url.'/bitlinks/'.$bitlink.'/countries', $params);
        }
 
        /*
@@ -61,7 +61,7 @@ class Bitlink {
       */
        public function getClicksForBitlink(string $bitlink, array $params = array()) 
        {
-              return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/clicks', $params);
+              return $this->api->get($this->url.'/bitlinks/'.$bitlink.'/clicks', $params);
        }
 
        /*
@@ -70,7 +70,7 @@ class Bitlink {
       */
        public function expandBitlink(array $params) 
        {
-              return $this->api->post($this->url . '/expand', $params);
+              return $this->api->post($this->url.'/expand', $params);
        }
       
        /*
@@ -79,7 +79,7 @@ class Bitlink {
       */
        public function getMetricsForBitlinkByReferrers(string $bitlink, array $params = array()) 
        {
-              return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/referrers', $params);
+              return $this->api->get($this->url.'/bitlinks/'.$bitlink.'/referrers', $params);
        }
       
        /*
@@ -88,7 +88,7 @@ class Bitlink {
       */
        public function createFullBitlink(array $params) 
        {
-              return $this->api->post($this->url . '/bitlinks', $params);
+              return $this->api->post($this->url.'/bitlinks', $params);
        }
       
        /*
@@ -97,7 +97,7 @@ class Bitlink {
       */
        public function updateBitlink(string $bitlink, array $params) 
        {
-              return $this->api->patch($this->url . '/bitlinks/'.$bitlink, $params);
+              return $this->api->patch($this->url.'/bitlinks/'.$bitlink, $params);
        }
 
        /*
@@ -106,7 +106,7 @@ class Bitlink {
       */
        public function getBitlink(string $bitlink) 
        {
-              return $this->api->get($this->url . '/bitlinks/'.$bitlink);
+              return $this->api->get($this->url.'/bitlinks/'.$bitlink);
        }
 
        /*
@@ -115,7 +115,7 @@ class Bitlink {
       */
        public function getClicksSummaryForBitlink(string $bitlink, array $params = array()) 
        {
-              return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/clicks/summary', $params);
+              return $this->api->get($this->url.'/bitlinks/'.$bitlink.'/clicks/summary', $params);
        }
 
        /*
@@ -124,7 +124,7 @@ class Bitlink {
       */
        public function createBitlink(array $params) 
        {
-              return $this->api->post($this->url . '/shorten', $params);
+              return $this->api->post($this->url.'/shorten', $params);
        }
 
        /*
@@ -133,7 +133,7 @@ class Bitlink {
       */
        public function getMetricsForBitlinkByReferringDomains(string $bitlink, array $params = array()) 
        {
-              return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/referring_domains', $params);
+              return $this->api->get($this->url.'/bitlinks/'.$bitlink.'/referring_domains', $params);
        }
  
        /*
@@ -142,7 +142,7 @@ class Bitlink {
       */
        public function getBitlinkQRCode(string $bitlink) 
        {
-              return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/qr');
+              return $this->api->get($this->url.'/bitlinks/'.$bitlink.'/qr');
        }
  
        /*
@@ -151,7 +151,7 @@ class Bitlink {
       */
        public function getMetricsForBitlinkByCities(string $bitlink, array $params = array()) 
        {
-              return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/cities', $params);
+              return $this->api->get($this->url.'/bitlinks/'.$bitlink.'/cities', $params);
        }
 
        /*
@@ -160,7 +160,7 @@ class Bitlink {
       */
        public function getMetricsForBitlinkByDevices(string $bitlink, array $params = array()) 
        {
-              return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/devices', $params);
+              return $this->api->get($this->url.'/bitlinks/'.$bitlink.'/devices', $params);
        }
  
 }
