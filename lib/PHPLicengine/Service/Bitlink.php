@@ -28,139 +28,139 @@ use PHPLicengine\Api\ApiInterface;
 
 class Bitlink {
  
-      private $url;
-      private $api;      
+       private $url;
+       private $api;      
       
-      public function __construct (ApiInterface $api)
-      {
-             $this->api = $api;
-             $this->url = 'https://api-ssl.bitly.com/v4';       
-      }
+       public function __construct (ApiInterface $api)
+       {
+              $this->api = $api;
+              $this->url = 'https://api-ssl.bitly.com/v4';       
+       }
       
-      /*
+       /*
       Get Metrics for a Bitlink by referrers by domain
       https://dev.bitly.com/api-reference#getMetricsForBitlinkByReferrersByDomains
       */
-      public function getMetricsForBitlinkByReferrersByDomains(string $bitlink, array $params = array()) 
-      {
-             return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/referrers_by_domains', $params);
-      }
+       public function getMetricsForBitlinkByReferrersByDomains(string $bitlink, array $params = array()) 
+       {
+              return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/referrers_by_domains', $params);
+       }
       
-      /*
+       /*
       Get Metrics for a Bitlink by countries
       https://dev.bitly.com/api-reference#getMetricsForBitlinkByCountries
       */             
-      public function getMetricsForBitlinkByCountries(string $bitlink, array $params = array()) 
-      {
-             return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/countries', $params);
-      }
+       public function getMetricsForBitlinkByCountries(string $bitlink, array $params = array()) 
+       {
+              return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/countries', $params);
+       }
 
-      /*
+       /*
       Get Clicks for a Bitlink
       https://dev.bitly.com/api-reference#getClicksForBitlink
       */
-      public function getClicksForBitlink(string $bitlink, array $params = array()) 
-      {
-             return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/clicks', $params);
-      }
+       public function getClicksForBitlink(string $bitlink, array $params = array()) 
+       {
+              return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/clicks', $params);
+       }
 
-      /*
+       /*
       Expand a Bitlink
       https://dev.bitly.com/api-reference#expandBitlink
       */
-      public function expandBitlink(array $params) 
-      {
-             return $this->api->post($this->url . '/expand', $params);
-      }
+       public function expandBitlink(array $params) 
+       {
+              return $this->api->post($this->url . '/expand', $params);
+       }
       
-      /*
+       /*
       Get Metrics for a Bitlink by referrers
       https://dev.bitly.com/api-reference#getMetricsForBitlinkByReferrers
       */
-      public function getMetricsForBitlinkByReferrers(string $bitlink, array $params = array()) 
-      {
-             return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/referrers', $params);
-      }
+       public function getMetricsForBitlinkByReferrers(string $bitlink, array $params = array()) 
+       {
+              return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/referrers', $params);
+       }
       
-      /*
+       /*
       Create a Bitlink
       https://dev.bitly.com/api-reference#createFullBitlink
       */
-      public function createFullBitlink(array $params) 
-      {
-             return $this->api->post($this->url . '/bitlinks', $params);
-      }
+       public function createFullBitlink(array $params) 
+       {
+              return $this->api->post($this->url . '/bitlinks', $params);
+       }
       
-      /*
+       /*
       Update a Bitlink
       https://dev.bitly.com/api-reference#updateBitlink
       */
-      public function updateBitlink(string $bitlink, array $params) 
-      {
-             return $this->api->patch($this->url . '/bitlinks/'.$bitlink, $params);
-      }
+       public function updateBitlink(string $bitlink, array $params) 
+       {
+              return $this->api->patch($this->url . '/bitlinks/'.$bitlink, $params);
+       }
 
-      /*
+       /*
       Retrieve a Bitlink
       https://dev.bitly.com/api-reference#getBitlink
       */
-      public function getBitlink(string $bitlink) 
-      {
-             return $this->api->get($this->url . '/bitlinks/'.$bitlink);
-      }
+       public function getBitlink(string $bitlink) 
+       {
+              return $this->api->get($this->url . '/bitlinks/'.$bitlink);
+       }
 
-      /*
+       /*
       Get Clicks Summary for a Bitlink
       https://dev.bitly.com/api-reference#getClicksSummaryForBitlink
       */
-      public function getClicksSummaryForBitlink(string $bitlink, array $params = array()) 
-      {
-             return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/clicks/summary', $params);
-      }
+       public function getClicksSummaryForBitlink(string $bitlink, array $params = array()) 
+       {
+              return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/clicks/summary', $params);
+       }
 
-      /*
+       /*
       Shorten a Link
       https://dev.bitly.com/api-reference#createBitlink
       */
-      public function createBitlink(array $params) 
-      {
-             return $this->api->post($this->url . '/shorten', $params);
-      }
+       public function createBitlink(array $params) 
+       {
+              return $this->api->post($this->url . '/shorten', $params);
+       }
 
-      /*
+       /*
       Get Metrics for a Bitlink by referring domains
       https://dev.bitly.com/api-reference#getMetricsForBitlinkByReferringDomains
       */
-      public function getMetricsForBitlinkByReferringDomains(string $bitlink, array $params = array()) 
-      {
-             return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/referring_domains', $params);
-      }
+       public function getMetricsForBitlinkByReferringDomains(string $bitlink, array $params = array()) 
+       {
+              return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/referring_domains', $params);
+       }
  
-      /*
+       /*
       Get a QR Code
       https://dev.bitly.com/api-reference#getBitlinkQRCode
       */
-      public function getBitlinkQRCode(string $bitlink) 
-      {
-             return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/qr');
-      }
+       public function getBitlinkQRCode(string $bitlink) 
+       {
+              return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/qr');
+       }
  
-      /*
+       /*
       Get Metrics for a Bitlink by City
       https://dev.bitly.com/api-reference#getMetricsForBitlinkByCities
       */
-      public function getMetricsForBitlinkByCities(string $bitlink, array $params = array()) 
-      {
-             return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/cities', $params);
-      }
+       public function getMetricsForBitlinkByCities(string $bitlink, array $params = array()) 
+       {
+              return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/cities', $params);
+       }
 
-      /*
+       /*
       Get Metrics for a Bitlink by Device Type
       https://dev.bitly.com/api-reference#getMetricsForBitlinkByDevices
       */
-      public function getMetricsForBitlinkByDevices(string $bitlink, array $params = array()) 
-      {
-             return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/devices', $params);
-      }
+       public function getMetricsForBitlinkByDevices(string $bitlink, array $params = array()) 
+       {
+              return $this->api->get($this->url . '/bitlinks/'.$bitlink.'/devices', $params);
+       }
  
 }
