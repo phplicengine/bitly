@@ -31,7 +31,7 @@ class Group {
        private $url;
        private $api;      
       
-       public function __construct (ApiInterface $api)
+       public function __construct(ApiInterface $api)
        {
               $this->api = $api;
               $this->url = 'https://api-ssl.bitly.com/v4/groups';       
@@ -43,7 +43,7 @@ class Group {
       */
        public function getGroupTags(string $group_guid) 
        {
-              return $this->api->get($this->url . '/'.$group_guid.'/tags');
+              return $this->api->get($this->url.'/'.$group_guid.'/tags');
        }
       
        /*
@@ -52,7 +52,7 @@ class Group {
       */
        public function getGroupMetricsByReferringNetworks(string $group_guid) 
        {
-              return $this->api->get($this->url . '/'.$group_guid.'/referring_networks');
+              return $this->api->get($this->url.'/'.$group_guid.'/referring_networks');
        }
       
        /*
@@ -61,7 +61,7 @@ class Group {
       */
        public function getGroupShortenCounts(string $group_guid) 
        {
-              return $this->api->get($this->url . '/'.$group_guid.'/shorten_counts');
+              return $this->api->get($this->url.'/'.$group_guid.'/shorten_counts');
        }
 
        /*
@@ -79,7 +79,7 @@ class Group {
       */
        public function getGroupPreferences(string $group_guid) 
        {
-              return $this->api->get($this->url . '/'.$group_guid.'/preferences');
+              return $this->api->get($this->url.'/'.$group_guid.'/preferences');
        }
       
        /*
@@ -88,7 +88,7 @@ class Group {
       */
        public function updateGroupPreferences(string $group_guid, array $params) 
        {
-              return $this->api->patch($this->url . '/'.$group_guid.'/preferences', $params);
+              return $this->api->patch($this->url.'/'.$group_guid.'/preferences', $params);
        }
 
        /*
@@ -97,7 +97,7 @@ class Group {
       */
        public function getBitlinksByGroup(string $group_guid, array $params = array()) 
        {
-              return $this->api->get($this->url . '/'.$group_guid.'/bitlinks', $params);
+              return $this->api->get($this->url.'/'.$group_guid.'/bitlinks', $params);
        }
 
        /*
@@ -106,7 +106,7 @@ class Group {
       */
        public function getGroupMetricsByCountries(string $group_guid) 
        {
-              return $this->api->get($this->url . '/'.$group_guid.'/countries');
+              return $this->api->get($this->url.'/'.$group_guid.'/countries');
        }
       
        /*
@@ -115,7 +115,7 @@ class Group {
       */
        public function getSortedBitlinks(string $group_guid, array $params = array(), string $sort = 'clicks') 
        {
-              return $this->api->get($this->url . '/'.$group_guid.'/bitlinks/'.$sort, $params);
+              return $this->api->get($this->url.'/'.$group_guid.'/bitlinks/'.$sort, $params);
        }
 
        /*
@@ -124,7 +124,7 @@ class Group {
       */
        public function updateGroup(string $group_guid, array $params) 
        {
-              return $this->api->patch($this->url . '/'.$group_guid, $params);
+              return $this->api->patch($this->url.'/'.$group_guid, $params);
        }      
       
        /*
@@ -133,7 +133,7 @@ class Group {
       */
        public function getGroup(string $group_guid) 
        {
-              return $this->api->get($this->url . '/'.$group_guid);
+              return $this->api->get($this->url.'/'.$group_guid);
        }      
       
        /*
@@ -142,7 +142,7 @@ class Group {
       */
        public function deleteGroup(string $group_guid) 
        {
-              return $this->api->delete($this->url . '/'.$group_guid);
+              return $this->api->delete($this->url.'/'.$group_guid);
        }      
  
        /*
@@ -151,7 +151,7 @@ class Group {
       */
        public function getGroupMetricsByCities(string $group_guid, array $params = array()) 
        {
-              return $this->api->get($this->url . '/'.$group_guid."/cities", $params);
+              return $this->api->get($this->url.'/'.$group_guid."/cities", $params);
        }      
 
        /*
@@ -160,7 +160,7 @@ class Group {
       */
        public function getGroupMetricsByDevices(string $group_guid, array $params = array()) 
        {
-              return $this->api->get($this->url . '/'.$group_guid."/devices", $params);
+              return $this->api->get($this->url.'/'.$group_guid."/devices", $params);
        }   
      
 }
