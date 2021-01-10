@@ -34,7 +34,7 @@ class Api implements ApiInterface {
               protected $curlErrno = false;
               protected $curlError = false;
               protected $curlProxy = false;
-              protected $response = false;
+              protected $response;
               protected $request = array();
               protected $json = true;
               protected $accept;
