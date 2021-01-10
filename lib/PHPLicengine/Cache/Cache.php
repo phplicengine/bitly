@@ -26,21 +26,21 @@ use PHPLicengine\Exception\CacheException;
 
 class Cache {
  
-      private $config;
+       private $config;
       
-      public function __construct (array $config)
-      {
-             $this->config = $config;       
-      }
+       public function __construct (array $config)
+       {
+              $this->config = $config;       
+       }
 
-      /*
+       /*
       This class uses Doctrine Cache. You can look at its doc to add more cache type.
       Whatever option you need to setup the cache type, must be passed as array to constructor.
       https://www.doctrine-project.org/projects/doctrine-cache/en/1.8/index.html
       */
-      public function getCache ()
-      {
-             switch ($this->config['type']) {
+       public function getCache ()
+       {
+              switch ($this->config['type']) {
                      case 'apc':
                           $cache = new \Doctrine\Common\Cache\ApcuCache();
                      break;
@@ -49,12 +49,12 @@ class Cache {
                      break;
                      case 'sqlite3':
                           $db = new \SQLite3($this->config['sqlite3_db']);
-                          $cache = new \Doctrine\Common\Cache\SQLite3Cache($db, $this->config['sqlite3_table']);
+                            $cache = new \Doctrine\Common\Cache\SQLite3Cache($db, $this->config['sqlite3_table']);
                      break;
                      default:
                           throw new CacheException('Invalid cache system');
                      break;
-             } 
-             return $cache;
-      }
+              } 
+              return $cache;
+       }
 }
