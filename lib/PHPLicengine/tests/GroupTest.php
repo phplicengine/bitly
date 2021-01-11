@@ -178,18 +178,6 @@ class GroupTest extends TestCase
         $bitlink->getGroup('test');
     }         
 
-    public function testDeleteGroup()
-    {
-        $mock = $this->createMock(ApiInterface::class);
-        $mock
-            ->expects($this->once())
-            ->method('delete')
-            ->with(
-                    $this->equalTo('https://api-ssl.bitly.com/v4/groups/test')
-                    );
-        $bitlink = new Group($mock);
-        $bitlink->deleteGroup('test');
-    }         
     public function testGetGroupMetricsByCities()
     {
         $mock = $this->createMock(ApiInterface::class);
