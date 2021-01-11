@@ -50,9 +50,9 @@ class Organization {
       Retrieve Organization Shorten Counts
       https://dev.bitly.com/api-reference#getOrganizationShortenCounts
       */
-      public function getOrganizationShortenCounts(string $organization_guid) 
+      public function getOrganizationShortenCounts(string $organization_guid, array $params = array()) 
       {
-             return $this->api->get($this->url . '/'.$organization_guid.'/shorten_counts');
+             return $this->api->get($this->url . '/'.$organization_guid.'/shorten_counts', $params);
       }
       
       /*
