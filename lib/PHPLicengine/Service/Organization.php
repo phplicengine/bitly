@@ -31,7 +31,7 @@ class Organization {
        private $url;
        private $api;      
       
-       public function __construct (ApiInterface $api)
+       public function __construct(ApiInterface $api)
        {
               $this->api = $api;
               $this->url = 'https://api-ssl.bitly.com/v4/organizations';       
@@ -52,7 +52,7 @@ class Organization {
       */
        public function getOrganizationShortenCounts(string $organization_guid, array $params = array()) 
        {
-              return $this->api->get($this->url . '/'.$organization_guid.'/shorten_counts', $params);
+              return $this->api->get($this->url.'/'.$organization_guid.'/shorten_counts', $params);
        }
       
        /*
@@ -61,7 +61,7 @@ class Organization {
       */
        public function getOrganization(string $organization_guid) 
        {
-              return $this->api->get($this->url . '/'.$organization_guid);
+              return $this->api->get($this->url.'/'.$organization_guid);
        }      
  
        /*
@@ -70,7 +70,7 @@ class Organization {
       */
        public function getPlanLimits(string $organization_guid) 
        {
-              return $this->api->get($this->url . '/'.$organization_guid."/plan_limits");
+              return $this->api->get($this->url.'/'.$organization_guid."/plan_limits");
        }
  
 }
