@@ -28,40 +28,40 @@ use PHPLicengine\Api\ApiInterface;
 
 class User {
  
-      private $url;
-      private $api;      
+       private $url;
+       private $api;      
       
-      public function __construct (ApiInterface $api)
-      {
-             $this->api = $api;
-             $this->url = 'https://api-ssl.bitly.com/v4/user';       
-      }
+       public function __construct (ApiInterface $api)
+       {
+              $this->api = $api;
+              $this->url = 'https://api-ssl.bitly.com/v4/user';       
+       }
  
-      /*
+       /*
       Update a User
       https://dev.bitly.com/api-reference#updateUser
       */
-      public function updateUser(array $params) 
-      {
-             return $this->api->patch($this->url, $params);
-      }
+       public function updateUser(array $params) 
+       {
+              return $this->api->patch($this->url, $params);
+       }
       
-      /*
+       /*
       Retrieve a User
       https://dev.bitly.com/api-reference#getUser
       */
-      public function getUser() 
-      {
-             return $this->api->get($this->url);
-      }
+       public function getUser() 
+       {
+              return $this->api->get($this->url);
+       }
  
-      /*
+       /*
       Get Platform Limits
       https://dev.bitly.com/api-reference#getPlatformLimits
       */
-      public function getPlatformLimits(array $params) 
-      {
-             return $this->api->get($this->url."/platform_limits", $params);
-      }
+       public function getPlatformLimits(array $params) 
+       {
+              return $this->api->get($this->url."/platform_limits", $params);
+       }
       
 }
