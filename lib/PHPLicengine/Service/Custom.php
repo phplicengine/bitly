@@ -68,9 +68,9 @@ class Custom  {
       Get Metrics for a Custom Bitlink by destination
       https://dev.bitly.com/api-reference#getCustomBitlinkMetricsByDestination
       */
-      public function getCustomBitlinkMetricsByDestination(string $custom_bitlink)
+      public function getCustomBitlinkMetricsByDestination(string $custom_bitlink, array $params = array())
       {
-             return $this->api->get($this->url . '/'.$custom_bitlink.'/clicks_by_destination');
+             return $this->api->get($this->url . '/'.$custom_bitlink.'/clicks_by_destination', $params);
       }
       
       /*
