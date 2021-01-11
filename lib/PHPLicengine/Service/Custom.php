@@ -77,7 +77,7 @@ class Custom  {
       Get Clicks for a Custom Bitlink's Entire History
       https://dev.bitly.com/api-reference#getClicksForCustomBitlink
       */
-      public function getClicksForCustomBitlink(string $custom_bitlink, array $params)
+      public function getClicksForCustomBitlink(string $custom_bitlink, array $params = array())
       {
              return $this->api->get($this->url . '/'.$custom_bitlink."/clicks", $params);
       }
