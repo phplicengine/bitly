@@ -137,15 +137,6 @@ class Group {
        }      
       
        /*
-      Delete a Group
-      https://dev.bitly.com/v4/#operation/deleteGroup
-      */
-       public function deleteGroup(string $group_guid) 
-       {
-              return $this->api->delete($this->url.'/'.$group_guid);
-       }      
- 
-       /*
       Get Click Metrics for a Group by City
       https://dev.bitly.com/api-reference#getGroupMetricsByCities
       */
