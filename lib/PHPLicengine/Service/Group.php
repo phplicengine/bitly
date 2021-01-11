@@ -59,9 +59,9 @@ class Group {
       Retrieve Group Shorten Counts
       https://dev.bitly.com/api-reference#getGroupShortenCounts
       */
-       public function getGroupShortenCounts(string $group_guid) 
+       public function getGroupShortenCounts(string $group_guid, array $params = array()) 
        {
-              return $this->api->get($this->url.'/'.$group_guid.'/shorten_counts');
+              return $this->api->get($this->url.'/'.$group_guid.'/shorten_counts', $params);
        }
 
        /*
