@@ -28,49 +28,49 @@ use PHPLicengine\Api\ApiInterface;
 
 class Organization {
  
-      private $url;
-      private $api;      
+       private $url;
+       private $api;      
       
-      public function __construct (ApiInterface $api)
-      {
-             $this->api = $api;
-             $this->url = 'https://api-ssl.bitly.com/v4/organizations';       
-      }
+       public function __construct (ApiInterface $api)
+       {
+              $this->api = $api;
+              $this->url = 'https://api-ssl.bitly.com/v4/organizations';       
+       }
  
-      /*
+       /*
       Retrieve Organizations
       https://dev.bitly.com/api-reference#getOrganizations
       */
-      public function getOrganizations() 
-      {
-             return $this->api->get($this->url);
-      }
+       public function getOrganizations() 
+       {
+              return $this->api->get($this->url);
+       }
       
-      /*
+       /*
       Retrieve Organization Shorten Counts
       https://dev.bitly.com/api-reference#getOrganizationShortenCounts
       */
-      public function getOrganizationShortenCounts(string $organization_guid, array $params = array()) 
-      {
-             return $this->api->get($this->url . '/'.$organization_guid.'/shorten_counts', $params);
-      }
+       public function getOrganizationShortenCounts(string $organization_guid, array $params = array()) 
+       {
+              return $this->api->get($this->url . '/'.$organization_guid.'/shorten_counts', $params);
+       }
       
-      /*
+       /*
       Retrieve an Organization
       https://dev.bitly.com/api-reference#getOrganization
       */
-      public function getOrganization(string $organization_guid) 
-      {
-             return $this->api->get($this->url . '/'.$organization_guid);
-      }      
+       public function getOrganization(string $organization_guid) 
+       {
+              return $this->api->get($this->url . '/'.$organization_guid);
+       }      
  
-      /*
+       /*
       Get Plan Limits
       https://dev.bitly.com/api-reference#getPlanLimits
       */
-      public function getPlanLimits(string $organization_guid) 
-      {
-             return $this->api->get($this->url . '/'.$organization_guid."/plan_limits");
-      }
+       public function getPlanLimits(string $organization_guid) 
+       {
+              return $this->api->get($this->url . '/'.$organization_guid."/plan_limits");
+       }
  
 }
