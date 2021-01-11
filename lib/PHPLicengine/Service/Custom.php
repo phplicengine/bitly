@@ -28,58 +28,58 @@ use PHPLicengine\Api\ApiInterface;
 
 class Custom  {
  
-      private $url;
-      private $api;      
+       private $url;
+       private $api;      
       
-      public function __construct (ApiInterface $api)
-      {
-             $this->api = $api;
-             $this->url = 'https://api-ssl.bitly.com/v4/custom_bitlinks';       
-      }
+       public function __construct (ApiInterface $api)
+       {
+              $this->api = $api;
+              $this->url = 'https://api-ssl.bitly.com/v4/custom_bitlinks';       
+       }
  
-      /*
+       /*
       Update Custom Bitlink
       https://dev.bitly.com/api-reference#updateCustomBitlink
       */
-      public function updateCustomBitlink(string $custom_bitlink, array $params)
-      {
-             return $this->api->patch($this->url . '/'.$custom_bitlink, $params);
-      }
+       public function updateCustomBitlink(string $custom_bitlink, array $params)
+       {
+              return $this->api->patch($this->url . '/'.$custom_bitlink, $params);
+       }
 
-      /*
+       /*
       Retrieve Custom Bitlink
       https://dev.bitly.com/api-reference#getCustomBitlink
       */
-      public function getCustomBitlink(string $custom_bitlink)
-      {
-             return $this->api->get($this->url . '/'.$custom_bitlink);
-      }
+       public function getCustomBitlink(string $custom_bitlink)
+       {
+              return $this->api->get($this->url . '/'.$custom_bitlink);
+       }
       
-      /*
+       /*
       Add Custom Bitlink
       https://dev.bitly.com/api-reference#addCustomBitlink
       */
-      public function addCustomBitlink(array $params)
-      {
-             return $this->api->post($this->url, $params);
-      }
+       public function addCustomBitlink(array $params)
+       {
+              return $this->api->post($this->url, $params);
+       }
       
-      /*
+       /*
       Get Metrics for a Custom Bitlink by destination
       https://dev.bitly.com/api-reference#getCustomBitlinkMetricsByDestination
       */
-      public function getCustomBitlinkMetricsByDestination(string $custom_bitlink, array $params = array())
-      {
-             return $this->api->get($this->url . '/'.$custom_bitlink.'/clicks_by_destination', $params);
-      }
+       public function getCustomBitlinkMetricsByDestination(string $custom_bitlink, array $params = array())
+       {
+              return $this->api->get($this->url . '/'.$custom_bitlink.'/clicks_by_destination', $params);
+       }
       
-      /*
+       /*
       Get Clicks for a Custom Bitlink's Entire History
       https://dev.bitly.com/api-reference#getClicksForCustomBitlink
       */
-      public function getClicksForCustomBitlink(string $custom_bitlink, array $params = array())
-      {
-             return $this->api->get($this->url . '/'.$custom_bitlink."/clicks", $params);
-      }
+       public function getClicksForCustomBitlink(string $custom_bitlink, array $params = array())
+       {
+              return $this->api->get($this->url . '/'.$custom_bitlink."/clicks", $params);
+       }
  
 }
