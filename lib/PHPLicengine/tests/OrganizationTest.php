@@ -48,10 +48,11 @@ class OrganizationTest extends TestCase
             ->expects($this->once())
             ->method('get')
             ->with(
-                    $this->equalTo('https://api-ssl.bitly.com/v4/organizations/test/shorten_counts')                    
+                    $this->equalTo('https://api-ssl.bitly.com/v4/organizations/test/shorten_counts'),
+                    $this->identicalTo(['key' => 'value'])
                     );
         $bitlink = new Organization($mock);
-        $bitlink->getOrganizationShortenCounts('test');
+        $bitlink->getOrganizationShortenCounts('test', ['key' => 'value']);
     }     
     
     public function testGetOrganization()
