@@ -59,7 +59,7 @@ class User {
       Get Platform Limits
       https://dev.bitly.com/api-reference#getPlatformLimits
       */
-      public function getPlatformLimits(array $params = array()) 
+      public function getPlatformLimits(array $params) 
       {
              return $this->api->get($this->url."/platform_limits", $params);
       }
