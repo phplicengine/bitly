@@ -104,9 +104,9 @@ class Group {
       Get Click Metrics for a Group by countries
       https://dev.bitly.com/api-reference#getGroupMetricsByCountries
       */
-       public function getGroupMetricsByCountries(string $group_guid) 
+       public function getGroupMetricsByCountries(string $group_guid, array $params = array()) 
        {
-              return $this->api->get($this->url.'/'.$group_guid.'/countries');
+              return $this->api->get($this->url.'/'.$group_guid.'/countries', $params);
        }
       
        /*
