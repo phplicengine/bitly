@@ -61,10 +61,11 @@ class GroupTest extends TestCase
             ->expects($this->once())
             ->method('get')
             ->with(
-                    $this->equalTo('https://api-ssl.bitly.com/v4/groups/test/shorten_counts')                    
+                    $this->equalTo('https://api-ssl.bitly.com/v4/groups/test/shorten_counts'),
+                    $this->identicalTo(['key' => 'value'])
                     );
         $bitlink = new Group($mock);
-        $bitlink->getGroupShortenCounts('test');
+        $bitlink->getGroupShortenCounts('test', ['key' => 'value']);
     }         
 
     public function testGetGroups()
@@ -129,10 +130,11 @@ class GroupTest extends TestCase
             ->expects($this->once())
             ->method('get')
             ->with(
-                    $this->equalTo('https://api-ssl.bitly.com/v4/groups/test/bitlinks')
+                    $this->equalTo('https://api-ssl.bitly.com/v4/groups/test/bitlinks'),
+                    $this->identicalTo(['key' => 'value'])
                     );
         $bitlink = new Group($mock);
-        $bitlink->getBitlinksByGroup('test');
+        $bitlink->getBitlinksByGroup('test', ['key' => 'value']);
     }         
 
     public function testGetSortedBitlinks()
