@@ -90,8 +90,8 @@ $result = $user->getPlatformLimits(['path'] => '');
 use PHPLicengine\Api\Api;
 use PHPLicengine\Service\OAuth;
 $api = new Api('API KEY GOES HERE');
-$app = new App($api);
-$result = $app->getOAuthApp($client_id);
+$oauth = new OAuth($api);
+$result = $oauth->getOAuthApp($client_id);
 
 // OAuth web flow
 // https://dev.bitly.com/docs/getting-started/authentication
@@ -106,7 +106,6 @@ $params['client_secret'] = "";
 $api = new Api();
 $oauth = new OAuth($api);
 $result = $oauth->getOAuthToken($params);
-print_r($result->getResponseArray());
 ```
 
 ### Bsd:
