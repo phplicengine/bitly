@@ -8,7 +8,7 @@ If a method doesn't have a Path parameter, Query Parameter will be first argumen
 * [Group](#group)
 * [Organization](#organization)
 * [User](#user)
-* [App](#app)
+* [OAuth](#oauth)
 * [Bsd](#bsd)
 * [Custom](#custom)
 * [Campaign](#campaign)
@@ -83,13 +83,28 @@ $result = $user->getUser();
 $result = $user->getPlatformLimits(['path'] => '');
 ```
 
-### App:
+### OAuth:
 ```php
+// Get OAuth Application
+// https://dev.bitly.com/docs/getting-started/authentication
 use PHPLicengine\Api\Api;
 use PHPLicengine\Service\App;
 $api = new Api('API KEY GOES HERE');
 $app = new App($api);
 $result = $app->getOAuthApp($client_id);
+
+// OAuth web flow
+// https://dev.bitly.com/docs/getting-started/authentication
+$params['redirect_uri'] = "";
+$params['state'] = "";
+$params['code'] = "";
+$params['client_id'] = "";
+$params['client_secret'] = "";
+
+$api = new Api();
+$oauth = new OAuth($api);
+$result = $oauth->getOAuthToken($params);
+print_r($result->getResponseArray());
 ```
 
 ### Bsd:
