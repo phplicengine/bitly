@@ -32,9 +32,9 @@ $result = $bitlink->getBitlink('bit.ly/34nRNvl');
 $result = $bitlink->getClicksSummaryForBitlink('bit.ly/34nRNvl');
 $result = $bitlink->createBitlink(['long_url' => 'http://www.example.com']);
 $result = $bitlink->getMetricsForBitlinkByReferringDomains('bit.ly/34nRNvl');
-$result = $bitlink->getBitlinkQRCode($bitlink);
-$result = $bitlink->getMetricsForBitlinkByCities($bitlink);
-$result = $bitlink->getMetricsForBitlinkByDevices($bitlink);
+$result = $bitlink->getBitlinkQRCode($bitlink_id);
+$result = $bitlink->getMetricsForBitlinkByCities($bitlink_id);
+$result = $bitlink->getMetricsForBitlinkByDevices($bitlink_id);
 ```
 `getSortedBitlinks()` and `getBitlinksByGroup()` are in `Group` service.
 
@@ -102,7 +102,6 @@ $params['state'] = "";
 $params['code'] = "";
 $params['client_id'] = "";
 $params['client_secret'] = "";
-
 $api = new Api();
 $oauth = new OAuth($api);
 $result = $oauth->getOAuthToken($params);
