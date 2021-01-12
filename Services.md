@@ -88,13 +88,15 @@ $result = $user->getPlatformLimits(['path'] => '');
 // Get OAuth Application
 // https://dev.bitly.com/docs/getting-started/authentication
 use PHPLicengine\Api\Api;
-use PHPLicengine\Service\App;
+use PHPLicengine\Service\OAuth;
 $api = new Api('API KEY GOES HERE');
 $app = new App($api);
 $result = $app->getOAuthApp($client_id);
 
 // OAuth web flow
 // https://dev.bitly.com/docs/getting-started/authentication
+use PHPLicengine\Api\Api;
+use PHPLicengine\Service\OAuth;
 $params['redirect_uri'] = "";
 $params['state'] = "";
 $params['code'] = "";
