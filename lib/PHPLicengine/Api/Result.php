@@ -25,8 +25,6 @@ namespace PHPLicengine\Api;
 
 class Result {
 
-       protected $error;
-       protected $message;
        protected $headers;
        protected $curlInfo;
        protected $body;
