@@ -31,7 +31,7 @@ class Bsd {
       private $url;
       private $api;      
       
-      public function __construct (ApiInterface $api)
+      public function __construct(ApiInterface $api)
       {
              $this->api = $api;
              $this->url = 'https://api-ssl.bitly.com/v4/bsds';       

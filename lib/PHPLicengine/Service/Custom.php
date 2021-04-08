@@ -26,12 +26,12 @@ use PHPLicengine\Exception\ResponseException;
 use PHPLicengine\Exception\CurlException;
 use PHPLicengine\Api\ApiInterface;
 
-class Custom  {
+class Custom {
  
        private $url;
        private $api;      
       
-       public function __construct (ApiInterface $api)
+       public function __construct(ApiInterface $api)
        {
               $this->api = $api;
               $this->url = 'https://api-ssl.bitly.com/v4/custom_bitlinks';       
@@ -43,7 +43,7 @@ class Custom  {
       */
        public function updateCustomBitlink(string $custom_bitlink, array $params)
        {
-              return $this->api->patch($this->url . '/'.$custom_bitlink, $params);
+              return $this->api->patch($this->url.'/'.$custom_bitlink, $params);
        }
 
        /*
@@ -52,7 +52,7 @@ class Custom  {
       */
        public function getCustomBitlink(string $custom_bitlink)
        {
-              return $this->api->get($this->url . '/'.$custom_bitlink);
+              return $this->api->get($this->url.'/'.$custom_bitlink);
        }
       
        /*
@@ -70,7 +70,7 @@ class Custom  {
       */
        public function getCustomBitlinkMetricsByDestination(string $custom_bitlink, array $params = array())
        {
-              return $this->api->get($this->url . '/'.$custom_bitlink.'/clicks_by_destination', $params);
+              return $this->api->get($this->url.'/'.$custom_bitlink.'/clicks_by_destination', $params);
        }
       
        /*
@@ -79,7 +79,7 @@ class Custom  {
       */
        public function getClicksForCustomBitlink(string $custom_bitlink, array $params = array())
        {
-              return $this->api->get($this->url . '/'.$custom_bitlink."/clicks", $params);
+              return $this->api->get($this->url.'/'.$custom_bitlink."/clicks", $params);
        }
  
 }
