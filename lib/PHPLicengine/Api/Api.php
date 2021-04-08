@@ -145,18 +145,11 @@ class Api implements ApiInterface {
                             break;
                      }
 
-                     $headers[] = $this->_api_key_var.$this->_api_key;
-                     if ($this->json === true) {
-                            $headers[] = 'Content-Type: application/json';
-                     }
-                     if ($this->accept === true) {
-                            $headers[] = 'Accept: application/json';
-                     }
-                  
-                     curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_HTTPHEADER, $headers);
+                     /** old header set was here */
+                     curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_HTTPHEADER, $this->_createHeaders($headers = null));
 
                      $this->request['method'] = strtoupper($method);
-                     $this->request['headers'] = $headers;
+                     $this->request['headers'] = $this->_createHeaders($headers = null);
                      $this->request['params'] = $params;
 
                      $this->response = curl_exec(/** @scrutinizer ignore-type */ $ch);
@@ -171,6 +164,18 @@ class Api implements ApiInterface {
                      return new Result($this->_getBody(), $this->_getHeaders(), $this->curlInfo);
               }
 
+              private function _createHeaders($headers = null)
+              {
+                      $headers[] = $this->_api_key_var.$this->_api_key;
+                      if ($this->json === true) {
+                            $headers[] = 'Content-Type: application/json';
+                      }
+                      if ($this->accept === true) {
+                            $headers[] = 'Accept: application/json';
+                      }
+                      return $headers;
+              }
+  
               private function _parseHeaders($raw_headers) 
               {
                      if (!function_exists('http_parse_headers')) {
