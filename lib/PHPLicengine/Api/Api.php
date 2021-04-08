@@ -131,10 +131,7 @@ class Api implements ApiInterface {
                             break;
                             case 'POST':
                                           curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_POST, true);
-                                          if ($this->json === true) {
-                                                 $params = json_encode($params);
-                                          }
-                                          curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_POSTFIELDS, $params);
+                                          curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_POSTFIELDS, $this->_json_encoder($params));
                             break;
                             case 'GET':
                                           curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_HTTPGET, true);
@@ -145,7 +142,6 @@ class Api implements ApiInterface {
                             break;
                      }
 
-                     /** old header set was here */
                      curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_HTTPHEADER, $this->_createHeaders($headers));
 
                      $this->request['method'] = strtoupper($method);
@@ -163,17 +159,24 @@ class Api implements ApiInterface {
                      curl_close(/** @scrutinizer ignore-type */ $ch);
                      return new Result($this->_getBody(), $this->_getHeaders(), $this->curlInfo);
               }
-
+              
+              private function _json_encoder($params)
+              {
+                      if ($this->json === true) {
+                          return json_encode($params);
+                      }
+              }
+  
               private function _createHeaders($headers = null)
               {
-                            $headers[] = $this->_api_key_var.$this->_api_key;
-                            if ($this->json === true) {
-                            $headers[] = 'Content-Type: application/json';
-                            }
-                            if ($this->accept === true) {
-                            $headers[] = 'Accept: application/json';
-                            }
-                            return $headers;
+                      $headers[] = $this->_api_key_var.$this->_api_key;
+                      if ($this->json === true) {
+                          $headers[] = 'Content-Type: application/json';
+                      }
+                      if ($this->accept === true) {
+                          $headers[] = 'Accept: application/json';
+                      }
+                      return $headers;
               }
   
               private function _parseHeaders($raw_headers) 
