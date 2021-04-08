@@ -166,14 +166,14 @@ class Api implements ApiInterface {
 
               private function _createHeaders($headers = null)
               {
-                      $headers[] = $this->_api_key_var.$this->_api_key;
-                      if ($this->json === true) {
+                            $headers[] = $this->_api_key_var.$this->_api_key;
+                            if ($this->json === true) {
                             $headers[] = 'Content-Type: application/json';
-                      }
-                      if ($this->accept === true) {
+                            }
+                            if ($this->accept === true) {
                             $headers[] = 'Accept: application/json';
-                      }
-                      return $headers;
+                            }
+                            return $headers;
               }
   
               private function _parseHeaders($raw_headers) 
