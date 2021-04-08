@@ -31,7 +31,7 @@ class Auth {
       private $url;
       private $api;      
 
-      public function __construct (ApiInterface $api, array $config)
+      public function __construct(ApiInterface $api, array $config)
       {
              $this->api = $api;
              $this->url = 'https://api-ssl.bitly.com/oauth/access_token';    
