@@ -28,7 +28,7 @@ class Cache {
  
        private $config;
       
-       public function __construct (array $config)
+       public function __construct(array $config)
        {
               $this->config = $config;       
        }
@@ -38,7 +38,7 @@ class Cache {
       Whatever option you need to setup the cache type, must be passed as array to constructor.
       https://www.doctrine-project.org/projects/doctrine-cache/en/1.8/index.html
       */
-       public function getCache ()
+       public function getCache()
        {
               switch ($this->config['type']) {
                      case 'apc':
