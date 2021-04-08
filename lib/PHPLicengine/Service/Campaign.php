@@ -31,7 +31,7 @@ class Campaign {
       private $url;
       private $api;      
       
-      public function __construct (ApiInterface $api)
+      public function __construct(ApiInterface $api)
       {
              $this->api = $api;
              $this->url = 'https://api-ssl.bitly.com/v4';       
@@ -43,7 +43,7 @@ class Campaign {
       */
       public function createChannel(array $params)
       {
-             return $this->api->post($this->url . '/channels', $params);
+             return $this->api->post($this->url.'/channels', $params);
       }
 
       /*
@@ -52,7 +52,7 @@ class Campaign {
       */
       public function getChannels(array $params)
       {
-             return $this->api->get($this->url . '/channels', $params);
+             return $this->api->get($this->url.'/channels', $params);
       }
       
       /*
@@ -61,7 +61,7 @@ class Campaign {
       */
       public function createCampaign(array $params)
       {
-             return $this->api->post($this->url . '/campaigns', $params);
+             return $this->api->post($this->url.'/campaigns', $params);
       }
       
       /*
@@ -70,7 +70,7 @@ class Campaign {
       */
       public function getCampaigns(array $params)
       {
-             return $this->api->get($this->url . '/campaigns', $params);
+             return $this->api->get($this->url.'/campaigns', $params);
       }
       
       /*
@@ -79,7 +79,7 @@ class Campaign {
       */
       public function getCampaign(string $campaign_guid)
       {
-             return $this->api->get($this->url . '/campaigns/'.$campaign_guid);
+             return $this->api->get($this->url.'/campaigns/'.$campaign_guid);
       }
       
       /*
@@ -88,7 +88,7 @@ class Campaign {
       */
       public function updateCampaign(string $campaign_guid, array $params)
       {
-             return $this->api->patch($this->url . '/campaigns/'.$campaign_guid, $params);
+             return $this->api->patch($this->url.'/campaigns/'.$campaign_guid, $params);
       }
       
       /*
@@ -97,7 +97,7 @@ class Campaign {
       */
       public function getChannel(string $channel_guid)
       {
-             return $this->api->get($this->url . '/channels/'.$channel_guid);
+             return $this->api->get($this->url.'/channels/'.$channel_guid);
       }
       
       /*
@@ -106,7 +106,7 @@ class Campaign {
       */
       public function updateChannel(string $channel_guid, array $params)
       {
-             return $this->api->patch($this->url . '/channels/'.$channel_guid, $params);
+             return $this->api->patch($this->url.'/channels/'.$channel_guid, $params);
       }      
  
 }
