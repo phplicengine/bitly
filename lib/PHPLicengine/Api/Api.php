@@ -146,10 +146,10 @@ class Api implements ApiInterface {
                      }
 
                      /** old header set was here */
-                     curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_HTTPHEADER, $this->_createHeaders($headers = null));
+                     curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_HTTPHEADER, $this->_createHeaders($headers));
 
                      $this->request['method'] = strtoupper($method);
-                     $this->request['headers'] = $this->_createHeaders($headers = null);
+                     $this->request['headers'] = $this->_createHeaders($headers);
                      $this->request['params'] = $params;
 
                      $this->response = curl_exec(/** @scrutinizer ignore-type */ $ch);
