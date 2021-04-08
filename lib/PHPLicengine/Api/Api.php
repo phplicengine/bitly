@@ -163,13 +163,6 @@ class Api implements ApiInterface {
                      return new Result($this->_getBody(), $this->_getHeaders(), $this->curlInfo);
               }
               
-              private function _json_encoder($params)
-              {
-                      if ($this->json === true) {
-                          return json_encode($params);
-                      }
-              }
-  
               private function _createHeaders($headers = null)
               {
                       $headers[] = $this->_api_key_var.$this->_api_key;
