@@ -132,7 +132,7 @@ class Api implements ApiInterface {
                             case 'POST':
                                           curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_POST, true);
                                           if ($this->json === true) {
-                                             $params = json_encode($params);
+                                              $params = json_encode($params);
                                           }
                                           curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_POSTFIELDS, $params);
                             break;
