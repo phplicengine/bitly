@@ -45,18 +45,18 @@ class Api implements ApiInterface {
               { 
                      if (!function_exists('curl_init')) 
                      { 
-                            throw new CurlException("cURL is not available. This API wrapper cannot be used."); 
+                         throw new CurlException("cURL is not available. This API wrapper cannot be used."); 
                      } 
                   
                      if (isset($api_key))
                      {
-                            $this->setApiKey($api_key);
+                         $this->setApiKey($api_key);
                      } 
                   
                      if ($basic === true) 
                      {
-                            $this->_api_key_var = 'Authorization: Basic ';
-                            $this->json = false;
+                         $this->_api_key_var = 'Authorization: Basic ';
+                         $this->json = false;
                      }
               }
 
@@ -117,10 +117,10 @@ class Api implements ApiInterface {
                      curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_HEADER, true);
                      curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLINFO_HEADER_OUT, true);
                      if ($this->curlProxy) {  
-                            curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_PROXY, $this->curlProxy);  
+                         curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_PROXY, $this->curlProxy);  
                      }  
                      if ($this->_curl_callback) { 
-                            call_user_func($this->_curl_callback, $ch, $params, $headers, $method); 
+                         call_user_func($this->_curl_callback, $ch, $params, $headers, $method); 
                      } 
                      switch (strtoupper($method)) { 
                             case 'PUT':
@@ -139,8 +139,8 @@ class Api implements ApiInterface {
                             case 'GET':
                                           curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_HTTPGET, true);
                                           if (!empty($params)) {
-                                                 $url .= '?'.http_build_query($params);
-                                                 curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_URL, $url);
+                                              $url .= '?'.http_build_query($params);
+                                              curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_URL, $url);
                                           }
                             break;
                      }
@@ -152,12 +152,14 @@ class Api implements ApiInterface {
                      $this->request['params'] = $params;
 
                      $this->response = curl_exec(/** @scrutinizer ignore-type */ $ch);
+                
                      if (curl_errno(/** @scrutinizer ignore-type */ $ch)) {
-                            $this->curlErrno = curl_errno(/** @scrutinizer ignore-type */ $ch);
-                            $this->curlError = curl_error(/** @scrutinizer ignore-type */ $ch);
-                            curl_close(/** @scrutinizer ignore-type */ $ch);
-                            return;
+                         $this->curlErrno = curl_errno(/** @scrutinizer ignore-type */ $ch);
+                         $this->curlError = curl_error(/** @scrutinizer ignore-type */ $ch);
+                         curl_close(/** @scrutinizer ignore-type */ $ch);
+                         return;
                      }
+                
                      $this->curlInfo = curl_getinfo(/** @scrutinizer ignore-type */ $ch);
                      curl_close(/** @scrutinizer ignore-type */ $ch);
                      return new Result($this->_getBody(), $this->_getHeaders(), $this->curlInfo);
@@ -207,12 +209,12 @@ class Api implements ApiInterface {
 
               private function _getHeaders()
               {
-                     return $this->_parseHeaders(substr($this->response, 0, $this->curlInfo['header_size']));
+                      return $this->_parseHeaders(substr($this->response, 0, $this->curlInfo['header_size']));
               }
 
               private function _getBody()
               {
-                     return substr($this->response, $this->curlInfo['header_size']);
+                      return substr($this->response, $this->curlInfo['header_size']);
               }
 
               public function getResponse()
