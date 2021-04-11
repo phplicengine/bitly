@@ -131,17 +131,11 @@ class Api implements ApiInterface {
                             break;
                             case 'POST':
                                           curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_POST, true);
-                                          if ($this->json === true) {
-                                              $params = json_encode($params);
-                                          }
                                           curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_POSTFIELDS, $params);
                             break;
                             case 'GET':
                                           curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_HTTPGET, true);
-                                          if (!empty($params)) {
-                                              $url .= '?'.http_build_query($params);
-                                              curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_URL, $url);
-                                          }
+                                          curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_URL, $url);
                             break;
                      }
 
@@ -229,11 +223,17 @@ class Api implements ApiInterface {
            
               public function get($url, $params = null, $headers = null)
               {
+                     if (!empty($params)) {
+                         $url .= '?'.http_build_query($params);
+                     }
                      return $this->_call($url, $params, $headers, $method = "GET");      
               }
            
               public function post($url, $params = null, $headers = null)
               {
+                     if ($this->json === true) {
+                         $params = json_encode($params);
+                     }                                       
                      return $this->_call($url, $params, $headers, $method = "POST");      
               }
 
