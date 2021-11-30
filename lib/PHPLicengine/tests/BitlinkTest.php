@@ -219,5 +219,18 @@ class BitlinkTest extends TestCase
         $bitlink = new Bitlink($mock);
         $bitlink->getMetricsForBitlinkByCities('test', ['key' => 'value']);
     }    
-
+    
+    public function testUpdateBitlinksByGroup()
+    {
+        $mock = $this->createMock(ApiInterface::class);
+        $mock
+            ->expects($this->once())
+            ->method('patch')
+            ->with(
+                $this->equalTo('https://api-ssl.bitly.com/v4/groups/test/bitlinks'),
+                $this->identicalTo(['key' => 'value'])
+            );
+        $bitlink = new Bitlink($mock);
+        $bitlink->updateBitlinksByGroup('test', ['key' => 'value']);
+    }   
 }
