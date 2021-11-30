@@ -95,5 +95,16 @@ class WebhookTest extends TestCase
         $bitlink = new Webhook($mock);
         $bitlink->deleteWebhook('test');
     } 
-
+    
+    public function testVerifyWebhook()
+    {
+        $mock = $this->createMock(ApiInterface::class);
+        $mock
+            ->expects($this->once())
+            ->method('post')
+            ->with(
+                    $this->equalTo('https://api-ssl.bitly.com/v4/webhooks/test/verify'));
+        $bitlink = new Webhook($mock);
+        $bitlink->verifyWebhook('test');
+    } 
 }
