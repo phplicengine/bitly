@@ -82,4 +82,13 @@ class Webhook {
              return $this->api->delete($this->url."/".$webhook_guid);
       }      
 
+       /*
+      Verify Webhook
+      https://dev.bitly.com/api-reference#verifyWebhook
+      */
+      public function verifyWebhook(string $webhook_guid) 
+      {
+             return $this->api->post($this->url."/".$webhook_guid."/verify");
+      }
+ 
 }
