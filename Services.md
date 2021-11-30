@@ -35,6 +35,7 @@ $result = $bitlink->getMetricsForBitlinkByReferringDomains('bit.ly/34nRNvl');
 $result = $bitlink->getBitlinkQRCode($bitlink_id);
 $result = $bitlink->getMetricsForBitlinkByCities($bitlink_id);
 $result = $bitlink->getMetricsForBitlinkByDevices($bitlink_id);
+$result = $bitlink->updateBitlinksByGroup('Bjar7NnSIp0');
 ```
 `getSortedBitlinks()` and `getBitlinksByGroup()` are in `Group` service.
 
@@ -58,6 +59,7 @@ $result = $group->updateGroup('Bjar7NnSIp0', ['name' => 'new name']);
 $result = $group->getGroup('Bjar7NnSIp0');
 $result = $group->getGroupMetricsByCities($group_guid);
 $result = $group->getGroupMetricsByDevices($group_guid);
+$result = $bitlink->getGroupClicks("Bjar7NnSIp0", ["unit" => "day", "units" => "30"]);
 ```
 
 ### Organization:
@@ -199,4 +201,5 @@ $result = $webhook->getWebhooks($organization_guid);
 $result = $webhook->getWebhook($webhook_guid);
 $result = $webhook->updateWebhook($webhook_guid, $params);
 $result = $webhook->deleteWebhook($webhook_guid);
+$result = $webhook->verifyWebhook($webhook_guid);
 ```
