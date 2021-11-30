@@ -206,4 +206,17 @@ class GroupTest extends TestCase
         $bitlink->getGroupMetricsByDevices('test', ['key' => 'value']);
     }         
     
+    public function testGetGroupClicks()
+    {
+        $mock = $this->createMock(ApiInterface::class);
+        $mock
+            ->expects($this->once())
+            ->method('get')
+            ->with(
+                    $this->equalTo('https://api-ssl.bitly.com/v4/groups/test/clicks'),
+                    $this->identicalTo(['key' => 'value'])
+                    );
+        $bitlink = new Group($mock);
+        $bitlink->getGroupClicks('test', ['key' => 'value']);
+    } 
 }
