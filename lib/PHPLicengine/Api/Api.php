@@ -123,11 +123,26 @@ class Api implements ApiInterface {
                          call_user_func($this->_curl_callback, $ch, $params, $headers, $method); 
                      } 
                      switch (strtoupper($method)) { 
-                            case 'PUT':
                             case 'PATCH':
+                                          curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_PATCH, true);
+                                          
+                                          if (!empty($params)) {
+                                              curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_POSTFIELDS, json_encode($params));
+                                          } 
+                            break;
+                            case 'PUT':
+                                          curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_PUT, true);
+                                          
+                                          if (!empty($params)) {
+                                              curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_POSTFIELDS, json_encode($params));
+                                          } 
+                            break;
                             case 'DELETE':
-                                          curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_CUSTOMREQUEST, strtoupper($method));
-                                          curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_POSTFIELDS, json_encode($params));
+                                          curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_DELETE, true);
+                                          
+                                          if (!empty($params)) {
+                                              curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_POSTFIELDS, json_encode($params));
+                                          } 
                             break;
                             case 'POST':
                                           curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_POST, true);
