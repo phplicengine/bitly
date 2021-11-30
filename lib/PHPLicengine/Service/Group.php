@@ -153,5 +153,14 @@ class Group {
        {
               return $this->api->get($this->url.'/'.$group_guid."/devices", $params);
        }   
-     
+
+       /*
+      Get clicks by group
+      https://dev.bitly.com/api-reference#getGroupClicks
+      */
+       public function getGroupClicks(string $group_guid, array $params = array()) 
+       {
+             return $this->api->get($this->url.'/'.$group_guid."/clicks", $params);
+              
+       } 
 }
