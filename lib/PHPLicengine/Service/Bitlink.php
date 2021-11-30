@@ -163,4 +163,13 @@ class Bitlink {
               return $this->api->get($this->url.'/bitlinks/'.$bitlink.'/devices', $params);
        }
  
+       /*
+      Bulk update bitlinks
+      https://dev.bitly.com/api-reference#updateBitlinksByGroup
+      */
+      public function updateBitlinksByGroup(string $group_guid, array $params = array()) 
+      {
+             return $this->api->patch($this->url . '/groups/'.$group_guid.'/bitlinks', $params);
+      }
+ 
 }
