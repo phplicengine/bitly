@@ -171,5 +171,13 @@ class Bitlink {
       {
              return $this->api->patch($this->url . '/groups/'.$group_guid.'/bitlinks', $params);
       }
- 
+
+      /*
+      Customize a Bitlink
+      https://dev.bitly.com/api-reference#addCustomBitlink
+      */
+      public function customizeBackHalf(string $custom_url, array $params)
+      {
+          return $this->api->patch($this->url . '/custom_bitlinks/' . $custom_url, $params);
+      }
 }
