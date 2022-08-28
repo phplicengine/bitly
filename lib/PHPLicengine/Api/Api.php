@@ -124,7 +124,7 @@ class Api implements ApiInterface {
                      } 
                      switch (strtoupper($method)) { 
                             case 'PATCH':
-                                          curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_PATCH, true);
+                                          curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_CUSTOMREQUEST, 'PATCH');
                                           
                                           if (!empty($params)) {
                                               curl_setopt(/** @scrutinizer ignore-type */ $ch, CURLOPT_POSTFIELDS, json_encode($params));
