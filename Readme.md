@@ -1,3 +1,4 @@
+[![Build Status](https://app.travis-ci.com/phplicengine/bitly.svg?branch=master)](https://app.travis-ci.com/phplicengine/bitly)
 [![Build Status](https://travis-ci.com/phplicengine/bitly.svg?branch=master)](https://travis-ci.com/phplicengine/bitly)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/phplicengine/bitly/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/phplicengine/bitly/?branch=master)
 [![Latest Stable Version](https://img.shields.io/packagist/v/phplicengine/bitly?label=version)](https://packagist.org/packages/phplicengine/bitly)
