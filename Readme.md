@@ -144,6 +144,8 @@ $bitlink = new Bitlink($api);
 This is added for your convenience, but you should not need it.
 
 ## Caching
+IMPORTANT NOTICE: Doctrine Cache is deprecated. You may use symfony/cache instead.
+
 Since Bitlinks never change or expire, this is recommended to cache data locally wherever possible. This library comes with Doctrine Cache. You can use cache like this:
 ```php
 use PHPLicengine\Cache\Cache;
