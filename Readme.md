@@ -14,7 +14,6 @@
 * [Installation](#installation)
 * [Usage](#usage)
 * [Manual](#manual)
-* [Caching](#caching)
 * [Contributing and Support](#contributing-and-support)
 * [License](#license)
 
