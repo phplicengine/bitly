@@ -143,19 +143,6 @@ $bitlink = new Bitlink($api);
 ```
 This is added for your convenience, but you should not need it.
 
-## Caching
-IMPORTANT NOTICE: Doctrine Cache is deprecated. You may use symfony/cache instead.
-
-Since Bitlinks never change or expire, this is recommended to cache data locally wherever possible. This library comes with Doctrine Cache. You can use cache like this:
-```php
-use PHPLicengine\Cache\Cache;
-$factory = new Cache(['type' => 'file', 'path' => 'path/to/cache/folder']);
-$cache = $factory->getCache();
-$cache->save('key', 'value');
-echo $cache->fetch('key'); // prints "value"
-```
-We suggest to look at [Doctrine Cache Doc](https://www.doctrine-project.org/projects/doctrine-cache/en/1.8/index.html) and investigate and customize [Cache class](lib/PHPLicengine/Cache/Cache.php) to use preferred cache type.
-
 ## Contributing and Support
 For all issues or feature request or support questions please open a new [issue](https://github.com/phplicengine/bitly/issues). All pull requests are welcome.
 
