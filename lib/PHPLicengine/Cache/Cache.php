@@ -1,6 +1,9 @@
 <?php
 
 // Cache.php
+// IMPORTANT NOTICE: Doctrine Cache is deprecated. 
+// This file remains for backward compatibility. Do not use it.
+// Instead, use symfony/cache.
 #################################################
 ##
 ## PHPLicengine
