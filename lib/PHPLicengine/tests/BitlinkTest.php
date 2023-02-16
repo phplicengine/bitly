@@ -186,10 +186,11 @@ class BitlinkTest extends TestCase
             ->expects($this->once())
             ->method('get')
             ->with(
-                $this->equalTo('https://api-ssl.bitly.com/v4/bitlinks/test/qr')
+                $this->equalTo('https://api-ssl.bitly.com/v4/bitlinks/test/qr'),
+                    $this->identicalTo(['key' => 'value'])
             );
         $bitlink = new Bitlink($mock);
-        $bitlink->getBitlinkQRCode('test');
+        $bitlink->getBitlinkQRCode('test', ['key' => 'value']);
     }    
     
     public function testGetMetricsForBitlinkByDevices()
@@ -233,4 +234,45 @@ class BitlinkTest extends TestCase
         $bitlink = new Bitlink($mock);
         $bitlink->updateBitlinksByGroup('test', ['key' => 'value']);
     }   
+    
+    public function testDeleteBitlink()
+    {
+        $mock = $this->createMock(ApiInterface::class);
+        $mock
+            ->expects($this->once())
+            ->method('delete')
+            ->with(
+                $this->equalTo('https://api-ssl.bitly.com/v4/bitlinks/test')
+            );
+        $bitlink = new Bitlink($mock);
+        $bitlink->deleteBitlink('test');
+    }   
+    
+    public function testCreateBitlinkQRCode()
+    {
+        $mock = $this->createMock(ApiInterface::class);
+        $mock
+            ->expects($this->once())
+            ->method('post')
+            ->with(
+                    $this->equalTo('https://api-ssl.bitly.com/v4/bitlinks/test/qr'),
+                    $this->identicalTo(['key' => 'value'])
+                    );
+        $bitlink = new Bitlink($mock);
+        $bitlink->createBitlinkQRCode('test', ['key' => 'value']);
+    }    
+    
+    public function testUpdateBitlinkQRCode()
+    {
+        $mock = $this->createMock(ApiInterface::class);
+        $mock
+            ->expects($this->once())
+            ->method('patch')
+            ->with(
+                    $this->equalTo('https://api-ssl.bitly.com/v4/bitlinks/test/qr'),
+                    $this->identicalTo(['key' => 'value'])
+                    );
+        $bitlink = new Bitlink($mock);
+        $bitlink->updateBitlinkQRCode('test', ['key' => 'value']);
+    }
 }
