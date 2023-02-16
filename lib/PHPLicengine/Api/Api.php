@@ -245,11 +245,6 @@ class Api implements ApiInterface {
                      return $this->_call($url, $params, $headers, $method = "DELETE");      
               }
 
-              public function put($url, $params = null, $headers = null) 
-              {
-                     return $this->_call($url, $params, $headers, $method = "PUT");      
-              }
-
               public function patch($url, $params = null, $headers = null) 
               {
                      return $this->_call($url, $params, $headers, $method = "PATCH");      
