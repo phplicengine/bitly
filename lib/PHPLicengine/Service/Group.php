@@ -160,7 +160,15 @@ class Group {
       */
        public function getGroupClicks(string $group_guid, array $params = array()) 
        {
-             return $this->api->get($this->url.'/'.$group_guid."/clicks", $params);
-              
+              return $this->api->get($this->url.'/'.$group_guid."/clicks", $params);
+       } 
+ 
+       /*
+      Retrieve QR Code Logo Images
+      https://dev.bitly.com/api-reference/#getQRLogoImagesByGroup
+      */
+       public function getQRLogoImagesByGroup(string $group_guid) 
+       {
+              return $this->api->get($this->url.'/'.$group_guid."/qr/images");
        } 
 }
