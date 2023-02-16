@@ -46,4 +46,12 @@ class Bsd {
              return $this->api->get($this->url);
       }
       
+      /*
+      Group Overrides
+      https://dev.bitly.com/api-reference/#getOverridesForGroups
+      */
+      public function getOverridesForGroups(string $group_guid, array $params = array()) 
+      {
+             return $this->api->get('https://api-ssl.bitly.com/v4/groups/'.$group_guid.'/overrides', $params);
+      }
 }
