@@ -95,7 +95,7 @@ class Bitlink {
       Update a Bitlink
       https://dev.bitly.com/api-reference#updateBitlink
       */
-       public function updateBitlink(string $bitlink, array $params) 
+       public function updateBitlink(string $bitlink, array $params = array()) 
        {
               return $this->api->patch($this->url.'/bitlinks/'.$bitlink, $params);
        }
@@ -140,9 +140,9 @@ class Bitlink {
       Get a QR Code
       https://dev.bitly.com/api-reference#getBitlinkQRCode
       */
-       public function getBitlinkQRCode(string $bitlink) 
+       public function getBitlinkQRCode(string $bitlink, array $params = array()) 
        {
-              return $this->api->get($this->url.'/bitlinks/'.$bitlink.'/qr');
+              return $this->api->get($this->url.'/bitlinks/'.$bitlink.'/qr', $params);
        }
  
        /*
@@ -167,9 +167,35 @@ class Bitlink {
       Bulk update bitlinks
       https://dev.bitly.com/api-reference#updateBitlinksByGroup
       */
-      public function updateBitlinksByGroup(string $group_guid, array $params = array()) 
-      {
-             return $this->api->patch($this->url . '/groups/'.$group_guid.'/bitlinks', $params);
-      }
+       public function updateBitlinksByGroup(string $group_guid, array $params = array()) 
+       {
+              return $this->api->patch($this->url . '/groups/'.$group_guid.'/bitlinks', $params);
+       }
  
+       /*
+      Delete a Bitlink
+      https://dev.bitly.com/api-reference/#deleteBitlink
+      */
+       public function deleteBitlink(string $bitlink) 
+       {
+               return $this->api->delete($this->url.'/bitlinks/'.$bitlink);
+       }
+      
+      /*
+      Create a QR Code
+      https://dev.bitly.com/api-reference/#createBitlinkQRCode
+      */
+       public function createBitlinkQRCode(string $bitlink, array $params = array()) 
+       {
+              return $this->api->post($this->url.'/bitlinks/'.$bitlink.'/qr', $params);
+       }
+ 
+      /*
+      Update a QR Code
+      https://dev.bitly.com/api-reference/#updateBitlinkQRCode
+      */
+       public function updateBitlinkQRCode(string $bitlink, array $params = array()) 
+       {
+              return $this->api->patch($this->url.'/bitlinks/'.$bitlink.'/qr', $params);
+       }
 }
