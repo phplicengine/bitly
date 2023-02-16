@@ -36,6 +36,9 @@ $result = $bitlink->getBitlinkQRCode($bitlink_id);
 $result = $bitlink->getMetricsForBitlinkByCities($bitlink_id);
 $result = $bitlink->getMetricsForBitlinkByDevices($bitlink_id);
 $result = $bitlink->updateBitlinksByGroup('Bjar7NnSIp0');
+$result = $bitlink->deleteBitlink('bit.ly/34nRNvl');
+$result = $bitlink->createBitlinkQRCode('bit.ly/34nRNvl', ['color' => '1133ff']);
+$result = $bitlink->updateBitlinkQRCode('bit.ly/34nRNvl', ['image_format' => 'svg']);
 ```
 `getSortedBitlinks()` and `getBitlinksByGroup()` are in `Group` service.
 
@@ -60,6 +63,7 @@ $result = $group->getGroup('Bjar7NnSIp0');
 $result = $group->getGroupMetricsByCities($group_guid);
 $result = $group->getGroupMetricsByDevices($group_guid);
 $result = $group->getGroupClicks("Bjar7NnSIp0", ["unit" => "day", "units" => "30"]);
+$result = $group->getQRLogoImagesByGroup($group_guid);
 ```
 
 ### Organization:
@@ -116,6 +120,7 @@ use PHPLicengine\Service\Bsd;
 $api = new Api('API KEY GOES HERE');
 $bsd = new Bsd($api);
 $result = $bsd->getBSDs();
+$result = $bsd->getOverridesForGroups($group_guid);
 ```
 
 ### Custom:
