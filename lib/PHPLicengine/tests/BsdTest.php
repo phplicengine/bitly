@@ -40,6 +40,19 @@ class BsdTest extends TestCase
         $bitlink = new Bsd($mock);
         $bitlink->getBSDs();
     } 
-
+    
+    public function testGetOverridesForGroups()
+    {
+        $mock = $this->createMock(ApiInterface::class);
+        $mock
+            ->expects($this->once())
+            ->method('get')
+            ->with(
+                    $this->equalTo('https://api-ssl.bitly.com/v4/groups/test/overrides'),                    
+                    $this->identicalTo(['key' => 'value'])
+                    );
+        $bitlink = new Bsd($mock);
+        $bitlink->getOverridesForGroups('test', ['key' => 'value']);
+    } 
 
 }
