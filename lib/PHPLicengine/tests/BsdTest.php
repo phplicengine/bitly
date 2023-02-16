@@ -41,4 +41,15 @@ class BsdTest extends TestCase
         $bitlink->getBSDs();
     } 
 
+    public function testGetQRLogoImagesByGroup()
+    {
+        $mock = $this->createMock(ApiInterface::class);
+        $mock
+            ->expects($this->once())
+            ->method('get')
+            ->with(
+                    $this->equalTo('https://api-ssl.bitly.com/v4/groups/test/qr/images'));
+        $bitlink = new Group($mock);
+        $bitlink->getQRLogoImagesByGroup('test');
+    } 
 }
